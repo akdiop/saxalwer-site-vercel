@@ -86,6 +86,12 @@ export const translations: Record<Language, {
     ctaText: string;
     ctaButton: string;
   };
+  feedback: {
+    title: string;
+    subtitle: string;
+    buttonLabel: string;
+    note: string;
+  };
   contact: {
     title: string;
     subtitle: string;
@@ -212,6 +218,12 @@ export const translations: Record<Language, {
       pressTitle: "Presse & médias",
       pressText: "Pour toute demande presse ou interview, contactez-nous directement à contact@saxalwer.com",
     },
+    feedback: {
+      title: "Donnez-nous votre avis",
+      subtitle: "Votre retour est précieux pour construire une plateforme qui répond vraiment à vos besoins. Ce formulaire est anonyme et ne prend que 2 minutes.",
+      buttonLabel: "Répondre au formulaire",
+      note: "Vos réponses sont anonymes et confidentielles.",
+    },
     footer: {
       copyright: "SaxalWér — Information fiable et adaptable en santé féminine",
       location: "Dakar, Sénégal — 2026",
@@ -322,6 +334,12 @@ export const translations: Record<Language, {
       pressTitle: "Presse ak médias",
       pressText: "Ngir laaj presse walla interview, jokkoo ak ñu : contact@saxalwer.com",
     },
+    feedback: {
+      title: "Jox sa xel",
+      subtitle: "Sa tontu dafa am solo ngir def benn plateforme bu yem ci sa bëgg. Formulaire bi du xaar sa tur te du dëkk feen.",
+      buttonLabel: "Tontu ci formulaire bi",
+      note: "Sa tontu du xaar sa tur.",
+    },
     footer: {
       copyright: "SaxalWér — Xibaar yu mat te yemale ci wér-kër jigéen ngir yëp",
       location: "Dakar, Senegaal — 2026",
@@ -333,3 +351,4 @@ export const translations: Record<Language, {
 export function getTranslation(lang: Language) {
   return translations[lang] ?? translations.fr;
 }
+// Note: feedback section added below in translations object
