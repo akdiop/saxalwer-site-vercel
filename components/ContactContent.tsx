@@ -4,6 +4,7 @@ import { useState, FormEvent } from 'react'
 import { useLanguage } from './SiteWrapper'
 import { sendContact } from '@/lib/supabase'
 import MedicalDisclaimer from './MedicalDisclaimer'
+import Link from 'next/link'
 
 type Status = 'idle' | 'loading' | 'success' | 'error'
 

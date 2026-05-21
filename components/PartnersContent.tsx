@@ -32,9 +32,6 @@ const content = {
       { title: 'Professionnelles de santé', text: "Gynécologues, sages-femmes, médecins, infirmières souhaitant relire ou valider nos contenus." },
     ],
 
-    currentLabel: 'Partenaires actuels',
-    currentTitle: 'Ils nous accompagnent déjà.',
-
     formLabel: 'Devenir partenaire',
     formTitle: 'Écrivez-nous pour explorer un partenariat.',
     formIntro: "Remplissez ce formulaire pour nous présenter votre organisation et votre intérêt. Nous reviendrons vers vous pour échanger.",
@@ -196,17 +193,6 @@ export default function PartnersContent() {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* PARTENAIRES ACTUELS */}
-      <section className="py-16 md:py-20 px-6 bg-[#EDE8D5]">
-        <div className="max-w-3xl mx-auto">
-          <span className="text-label block mb-5 text-[#A65D40]/70">{t.currentLabel}</span>
-          <h2 className="title-h2 mb-3">{t.currentTitle}</h2>
-          <div className="w-10 h-px bg-[#A65D40] mb-12" />
-
-          <InDevelopment message={language === 'wo' ? 'Mu ngi def — partenaire yi dinañu leen wone ci kanam.' : 'En cours de développement — nos partenaires seront présentés ici prochainement.'} />
         </div>
       </section>
 

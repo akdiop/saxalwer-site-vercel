@@ -2,10 +2,26 @@
 
 import Link from 'next/link'
 import { useLanguage } from './SiteWrapper'
+import { Language } from '@/lib/translations'
 import MedicalDisclaimer from './MedicalDisclaimer'
 
+type ResearchApproachItem = { num: string; title: string; text: string }
+type ResearchWhyPillar = { title: string; text: string }
+type ResearchSection = { num: string; title: string; text: string; method: string }
+type ResearchIndicator = { title: string; text: string }
+
+type ResearchContentItem = {
+  hero: { label: string; title: string; subtitle: string }
+  approach: { label: string; title: string; items: ResearchApproachItem[] }
+  why: { label: string; title: string; text: string; pillars: ResearchWhyPillar[] }
+  sections: ResearchSection[]
+  ethics: { label: string; title: string; items: string[] }
+  cta: { title: string; text: string; btn1: string; btn2: string }
+  indicators: { label: string; title: string; subtitle: string; note: string; items: ResearchIndicator[] }
+}
+
 /* ─── Contenu fr / wo ─── */
-const content = {
+const content: Record<Language, ResearchContentItem> = {
   fr: {
     hero: {
       label: 'Recherche & impact',
@@ -15,12 +31,12 @@ const content = {
 
     approach: {
       label: 'Démarche',
-      title: 'SaxalWér est fondé sur une démarche rigoureuse de recherche-action, combinant science sociale et technologie.',
+      title: 'SaxalWér est fondée sur une démarche rigoureuse de recherche-action, combinant science sociale et technologie.',
       items: [
         {
           num: '01',
           title: 'Recherche de terrain',
-          text: "Des entretiens qualitatifs menés avec des femmes et filles de différentes régions du Sénégal ont permis d'identifier les besoins réels, les barrières d'accès et les tabous qui structurent les pratiques de santé.",
+          text: "Des entretiens qualitatifs menés avec des femmes et filles de différentes régions du Sénégal permettent d'identifier les besoins réels, les barrières d'accès, les normes et les tabous qui structurent les pratiques de santé.",
         },
         {
           num: '02',
