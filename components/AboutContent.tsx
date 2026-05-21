@@ -72,7 +72,7 @@ const content = {
     vision: {
       label: 'Notre vision',
       title: 'Une référence africaine en santé féminine digitale.',
-      text: "Devenir la plateforme de référence en Afrique subsaharienne pour la santé sexuelle et reproductive des femmes — combinant innovation technologique, sensibilité culturelle profonde et approche décoloniale, avec un fort impact socio-culturel mesurable.",
+      text: "Devenir la plateforme de référence au Sénégal pour la santé sexuelle et reproductive des femmes — combinant innovation technologique, sensibilité culturelle profonde et approche décoloniale, avec un fort impact socio-culturel mesurable.",
       detail: "Nous refusons de transposer des modèles étrangers. Nous construisons depuis ici, avec les femmes d'ici, pour les femmes d'ici.",
     },
     positioning: {

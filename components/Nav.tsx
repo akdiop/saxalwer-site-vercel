@@ -24,7 +24,7 @@ const navLinks = [
 export default function Nav({ language, onLanguageChange }: Props) {
   const [menuOpen, setMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
-  const pathname = usePathname()
+  const pathname = usePathname() ?? "/";
   const isWo = language === 'wo'
 
   useEffect(() => {
