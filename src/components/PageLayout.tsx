@@ -11,7 +11,7 @@ interface PageLayoutProps {
  *  Garde le fond beige, le padding nav, et l'animation d'entrée. */
 export function PageLayout({ title, subtitle, children }: PageLayoutProps) {
   return (
-    <main className="flex-1 bg-[#F5F1E6] pt-20 pb-20 px-5 relative overflow-hidden">
+    <main className="flex-1 bg-[#F5F1E6] pt-24 pb-24 px-6 md:px-10 relative overflow-hidden">
 
       {/* Filigrane baobab discret */}
       <div
@@ -25,16 +25,16 @@ export function PageLayout({ title, subtitle, children }: PageLayoutProps) {
         />
       </div>
 
-      <div className="max-w-3xl mx-auto relative z-10">
+      <div className="max-w-3xl mx-auto relative z-10 px-2 md:px-0">
         {/* En-tête de page */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
-          className="mb-14 md:mb-16"
+          className="mb-16 md:mb-20"
         >
           <h1
-            className="text-3xl md:text-4xl lg:text-5xl text-[#1A3C34] leading-[1.2] mb-5"
+            className="text-3xl md:text-4xl lg:text-5xl text-[#1A3C34] leading-[1.2] mb-6"
             style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 600 }}
           >
             {title}

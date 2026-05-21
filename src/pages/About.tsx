@@ -20,7 +20,7 @@ export function About({ language }: AboutProps) {
     <PageLayout title={a.title} subtitle={a.subtitle}>
 
       {/* Blocs texte */}
-      <div className="flex flex-col gap-10 mb-16">
+      <div className="flex flex-col gap-12 mb-16">
         {blocks.map((block, i) => (
           <motion.div
             key={i}
@@ -28,7 +28,7 @@ export function About({ language }: AboutProps) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-40px' }}
             transition={{ duration: 0.6, delay: i * 0.1 }}
-            className="border-l-2 border-[#A65D40]/30 pl-6"
+            className="border-l-2 border-[#A65D40]/30 pl-6 py-2"
           >
             <h2
               className="text-xl md:text-2xl text-[#1A3C34] mb-3"
