@@ -29,7 +29,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Autofill fix pour les inputs */
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus {
