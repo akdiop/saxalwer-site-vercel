@@ -430,7 +430,7 @@ export default function ParticipateContent() {
               {/* Participation */}
               <div>
                 <label className="form-label">{t.form.participation}</label>
-                <div className="flex flex-col gap-2.5">
+                <div role="group" aria-label={t.form.participation} className="flex flex-col gap-2.5">
                   {[
                     { val: 'test',  label: t.form.testApp },
                     { val: 'focus', label: t.form.focusGroup },
@@ -441,6 +441,7 @@ export default function ParticipateContent() {
                       type="button"
                       onClick={() => toggleParticipation(opt.val)}
                       disabled={status === 'loading'}
+                      aria-pressed={participation.includes(opt.val)}
                       className={`flex items-center gap-3 px-5 py-3.5 rounded-2xl text-sm font-light text-left border transition-all duration-200 ${
                         participation.includes(opt.val)
                           ? 'bg-[#A65D40]/8 border-[#A65D40]/40 text-[#1A3C34]'
@@ -465,7 +466,7 @@ export default function ParticipateContent() {
               {/* Parent / tutrice */}
               <div>
                 <label className="form-label">{t.form.teen}</label>
-                <div className="flex gap-2">
+                <div role="group" aria-label={t.form.teen} className="flex gap-2">
                   {[
                     { val: 'yes', label: t.form.teenYes },
                     { val: 'no',  label: t.form.teenNo },
@@ -475,6 +476,7 @@ export default function ParticipateContent() {
                       type="button"
                       onClick={() => setTeen(opt.val)}
                       disabled={status === 'loading'}
+                      aria-pressed={teen === opt.val}
                       className={`px-5 py-2.5 rounded-full text-sm font-light border transition-all duration-200 ${
                         teen === opt.val
                           ? 'bg-[#1A3C34] text-white border-[#1A3C34]'
@@ -517,7 +519,7 @@ export default function ParticipateContent() {
               </label>
 
               {/* Bouton */}
-              <button type="submit" disabled={status === 'loading' || !consent} className="btn-primary justify-center self-start">
+              <button type="submit" disabled={status === 'loading' || !consent || participation.length === 0} className="btn-primary justify-center self-start">
                 {status === 'loading' ? t.form.submitLoading : t.form.submit}
               </button>
 

@@ -105,18 +105,35 @@ export default function ContactContent() {
   const [subject, setSubject] = useState('')
   const [message, setMessage] = useState('')
   const [status, setStatus] = useState<Status>('idle')
+  const [error, setError] = useState('')
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault()
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return
+    if (!subject || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      setStatus('error')
+      setError(
+        !subject
+          ? (language === 'wo'
+              ? 'Jëfandikoo benn sujet.'
+              : 'Veuillez sélectionner un sujet.')
+          : (language === 'wo'
+              ? 'Jëfandikoo benn email bu baax.'
+              : 'Veuillez entrer une adresse email valide.')
+      )
+      setTimeout(() => { setStatus('idle'); setError('') }, 5000)
+      return
+    }
     setStatus('loading')
-    const { ok } = await sendContact({ name, email, subject, message, language })
+    setError('')
+    const { ok, error: err } = await sendContact({ name, email, subject, message, language })
     if (ok) {
       setStatus('success')
       setName(''); setEmail(''); setSubject(''); setMessage('')
+      setError('')
     } else {
       setStatus('error')
-      setTimeout(() => setStatus('idle'), 5000)
+      setError(err ?? t.errorText)
+      setTimeout(() => { setStatus('idle'); setError('') }, 5000)
     }
   }
 
@@ -169,24 +186,27 @@ export default function ContactContent() {
 
                 {/* Sujet */}
                 <div>
-                  <label className="form-label">{t.subject}</label>
-                  <div className="flex flex-wrap gap-2">
-                    {t.subjectOptions.map(opt => (
-                      <button
-                        key={opt}
-                        type="button"
-                        onClick={() => setSubject(opt)}
-                        disabled={status === 'loading'}
-                        className={`px-5 py-2.5 rounded-full text-sm font-light border transition-all duration-200 ${
-                          subject === opt
-                            ? 'bg-[#1A3C34] text-white border-[#1A3C34]'
-                            : 'bg-white/40 text-[#7D5A44] border-[#1A3C34]/15 hover:border-[#A65D40]/40'
-                        }`}
-                      >
-                        {opt}
-                      </button>
-                    ))}
-                  </div>
+                  <fieldset>
+                    <legend id="subject-legend" className="form-label">{t.subject}</legend>
+                    <div role="group" aria-labelledby="subject-legend" className="flex flex-wrap gap-2">
+                      {t.subjectOptions.map(opt => (
+                        <button
+                          key={opt}
+                          type="button"
+                          onClick={() => setSubject(opt)}
+                          disabled={status === 'loading'}
+                          aria-pressed={subject === opt}
+                          className={`px-5 py-2.5 rounded-full text-sm font-light border transition-all duration-200 ${
+                            subject === opt
+                              ? 'bg-[#1A3C34] text-white border-[#1A3C34]'
+                              : 'bg-white/40 text-[#7D5A44] border-[#1A3C34]/15 hover:border-[#A65D40]/40'
+                          }`}
+                        >
+                          {opt}
+                        </button>
+                      ))}
+                    </div>
+                  </fieldset>
                 </div>
 
                 {/* Message */}

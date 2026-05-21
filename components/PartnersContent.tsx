@@ -256,9 +256,10 @@ export default function PartnersContent() {
               {/* Type */}
               <div>
                 <label className="block text-[10px] text-white/55 uppercase tracking-widest mb-3 font-medium">{t.type}</label>
-                <div className="flex flex-wrap gap-2">
+                <div role="group" aria-label={t.type} className="flex flex-wrap gap-2">
                   {t.typeOptions.map(opt => (
                     <button key={opt} type="button" onClick={() => setType(opt)} disabled={status === 'loading'}
+                      aria-pressed={type === opt}
                       className={`px-4 py-2 rounded-full text-xs font-light border transition-all duration-200 ${
                         type === opt
                           ? 'bg-[#D4AF37] text-[#1A3C34] border-[#D4AF37]'

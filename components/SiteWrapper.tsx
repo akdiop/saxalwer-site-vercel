@@ -3,7 +3,7 @@
 // Layout global — enveloppe toutes les pages
 // Gère la langue et fournit Nav + Footer à tout le site
 
-import { useState, ReactNode } from 'react'
+import { useState, useEffect, ReactNode } from 'react'
 import Nav from './Nav'
 import Footer from './Footer'
 import { Language } from '@/lib/translations'
@@ -12,6 +12,12 @@ interface Props { children: ReactNode }
 
 export default function SiteWrapper({ children }: Props) {
   const [language, setLanguage] = useState<Language>('fr')
+
+  useEffect(() => {
+    if (typeof document !== 'undefined') {
+      document.documentElement.lang = language === 'wo' ? 'wo' : 'fr'
+    }
+  }, [language])
 
   return (
     <>

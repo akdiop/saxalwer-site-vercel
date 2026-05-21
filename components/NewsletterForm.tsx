@@ -42,7 +42,12 @@ export default function NewsletterForm({ language }: Props) {
     <div className="w-full max-w-lg mx-auto">
       <form onSubmit={handleSubmit} noValidate>
         <div className="flex flex-col sm:flex-row gap-3">
+          <label htmlFor="newsletterEmail" className="sr-only">
+            {isWo ? 'Sa adrés email' : 'Votre adresse email'}
+          </label>
           <input
+            id="newsletterEmail"
+            name="email"
             type="email"
             value={email}
             onChange={e => setEmail(e.target.value)}
