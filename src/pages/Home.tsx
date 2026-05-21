@@ -7,3 +7,5 @@ interface HomeProps { language: Language; }
 export function Home({ language }: HomeProps) {
   return <Hero language={language} />;
 }
+
+export default Home;

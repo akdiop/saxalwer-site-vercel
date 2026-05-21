@@ -62,3 +62,5 @@ export function Research({ language }: ResearchProps) {
     </PageLayout>
   );
 }
+
+export default Research;

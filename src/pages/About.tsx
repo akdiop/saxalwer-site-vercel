@@ -99,3 +99,5 @@ export function About({ language }: AboutProps) {
     </PageLayout>
   );
 }
+
+export default About;

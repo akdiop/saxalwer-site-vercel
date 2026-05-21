@@ -68,3 +68,5 @@ export function UserTests({ language }: UserTestsProps) {
     </PageLayout>
   );
 }
+
+export default UserTests;

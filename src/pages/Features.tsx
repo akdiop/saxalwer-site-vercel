@@ -55,3 +55,5 @@ export function Features({ language }: FeaturesProps) {
     </PageLayout>
   );
 }
+
+export default Features;

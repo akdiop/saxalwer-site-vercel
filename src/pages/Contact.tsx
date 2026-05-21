@@ -109,3 +109,6 @@ export function Contact({ language }: ContactProps) {
     </PageLayout>
   );
 }
+
+export default Contact;
+}
