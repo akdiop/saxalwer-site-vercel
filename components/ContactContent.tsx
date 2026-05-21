@@ -220,11 +220,18 @@ export default function ContactContent() {
                   {status === 'loading' ? t.submitLoading : t.submit}
                 </button>
 
-                {status === 'error' && <p className="form-message-error">{t.errorText}</p>}
+                {status === 'error' && (
+                  <p className="form-message-error" role="alert">
+                    {error || t.errorText}
+                  </p>
+                )}
 
                 {/* Note vie privée */}
                 <p className="text-xs text-[#1A3C34]/55 font-light italic leading-relaxed border-l-2 border-[#A65D40]/30 pl-4 py-1 mt-2" style={{ maxWidth: '60ch' }}>
-                  {t.privacyNote}
+                  {t.privacyNote} {' '}
+                  <Link href="/confidentialite" className="link-text">
+                    {language === 'wo' ? 'Xool ceebu géewal' : 'Voir la politique de confidentialité'}
+                  </Link>
                 </p>
               </form>
             )}

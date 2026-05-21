@@ -2,8 +2,15 @@
 // Supabase — client + helpers pour tous les formulaires
 // ─────────────────────────────────────────────
 
-export const projectId = process.env.NEXT_PUBLIC_SUPABASE_PROJECT_ID ?? ''
-export const publicAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ?? ''
+export const projectId =
+  process.env.NEXT_PUBLIC_SUPABASE_PROJECT_ID ??
+  process.env.VITE_SUPABASE_PROJECT_ID ??
+  ''
+
+export const publicAnonKey =
+  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ??
+  process.env.VITE_SUPABASE_ANON_KEY ??
+  ''
 
 const SUPABASE_URL = `https://${projectId}.supabase.co/rest/v1`
 

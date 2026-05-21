@@ -71,8 +71,8 @@ Dans le dossier racine, crée un fichier `.env.production`
 et colle ce contenu (avec tes vraies valeurs Supabase) :
 
 ```
-VITE_SUPABASE_PROJECT_ID=ton-project-id-ici
-VITE_SUPABASE_ANON_KEY=ta-anon-key-ici
+NEXT_PUBLIC_SUPABASE_PROJECT_ID=ton-project-id-ici
+NEXT_PUBLIC_SUPABASE_ANON_KEY=ta-anon-key-ici
 ```
 
 ⚠️ Ce fichier ne sera PAS mis sur GitHub (il est dans .gitignore).

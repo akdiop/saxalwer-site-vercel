@@ -13,6 +13,28 @@ const content = {
       subtitle: "SaxalWér s'inscrit dans une démarche de recherche rigoureuse, à l'intersection de la santé publique, de l'économie de la santé, des normes sociales, des études de genre, des données comportementales et de la santé numérique. Nous construisons ce que nous savons être utile — et nous mesurons ce que nous faisons.",
     },
 
+    approach: {
+      label: 'Démarche',
+      title: 'SaxalWér est fondé sur une démarche rigoureuse de recherche-action, combinant science sociale et technologie.',
+      items: [
+        {
+          num: '01',
+          title: 'Recherche de terrain',
+          text: "Des entretiens qualitatifs menés avec des femmes et filles de différentes régions du Sénégal ont permis d'identifier les besoins réels, les barrières d'accès et les tabous qui structurent les pratiques de santé.",
+        },
+        {
+          num: '02',
+          title: 'Cadre décolonial',
+          text: "Notre approche refuse d'imposer des modèles de santé numérique développés pour d'autres contextes. Nous travaillons à partir des savoirs locaux, des langues vernaculaires et des systèmes de représentation propres au contexte sénégalais.",
+        },
+        {
+          num: '03',
+          title: 'Innovation responsable',
+          text: "La technologie est au service des femmes, pas l'inverse. Chaque fonctionnalité est évaluée à l'aune de son utilité réelle pour les utilisatrices et de son respect de leur dignité et de leur autonomie.",
+        },
+      ],
+    },
+
     why: {
       label: 'Le fondement',
       title: 'Pourquoi la recherche est centrale.',
@@ -66,22 +88,6 @@ const content = {
       },
     ],
 
-    indicators: {
-      label: 'Indicateurs',
-      title: 'Ce que nous mesurons.',
-      subtitle: "Mesurer avec rigueur, sans surinterpréter. Voici les indicateurs principaux que nous suivons.",
-      note: "Ces indicateurs évolueront au fil des phases de test. Tous ne sont pas mesurables avec la même fiabilité.",
-      items: [
-        { title: "Usage de l'application", text: "Fréquence, durée, modules consultés. Comprendre ce qui est utilisé et ce qui ne l'est pas." },
-        { title: 'Compréhension des informations', text: "Mesure de la littératie en santé avant et après usage." },
-        { title: 'Confiance déclarée', text: "Niveau de confiance des utilisatrices envers l'information reçue et envers la plateforme." },
-        { title: "Intention de consulter", text: "Évolution de la disposition à consulter une professionnelle de santé." },
-        { title: 'Recours effectif aux soins', text: "Lorsque mesurable : utilisation déclarée des structures de santé après usage." },
-        { title: 'Utilisation en français et wolof', text: "Répartition des usages par langue, indicateur clé d'accessibilité linguistique." },
-        { title: 'Diversité des profils', text: "Âge, région, niveau d'éducation, statut matrimonial — pour s'assurer que SaxalWér ne sert pas qu'une partie des femmes." },
-      ],
-    },
-
     ethics: {
       label: 'Éthique',
       title: 'Nos engagements de recherche.',
@@ -102,6 +108,22 @@ const content = {
       btn1: 'Nous contacter',
       btn2: 'Voir les partenaires',
     },
+
+    indicators: {
+      label: 'Indicateurs',
+      title: 'Ce que nous mesurons.',
+      subtitle: "Mesurer avec rigueur, éviter la surinterprétation. Voici les indicateurs que nous suivons.",
+      note: "Les indicateurs évoluent au fil des phases. Tous peuvent être mesurés avec fiabilité.",
+      items: [
+        { title: "Utilisation de l'application", text: "Fréquence, durée, modules. Identifier qui utilise et qui n'utilise pas." },
+        { title: 'Compréhension des informations', text: "Mesurer la littératie en santé avant et après utilisation." },
+        { title: 'Confiance', text: "Niveau de confiance dans la fiabilité de l'information et de la plateforme." },
+        { title: 'Intention de consulter', text: "Affirmer le souhait de consulter un professionnel de santé." },
+        { title: 'Consultation effective', text: "Autant que possible : suivi des utilisatrices après utilisation." },
+        { title: 'Français et Wolof', text: "Répartition d'utilisation par langue, indicateur clé d'accessibilité." },
+        { title: 'Profils utilisatrices', text: "Âge, localisation, éducation, statut matrimonial — pour mesurer si SaxalWér rejoint une seule catégorie." },
+      ],
+    },
   },
 
   wo: {
@@ -109,6 +131,27 @@ const content = {
       label: 'Xam-xam & impact',
       title: 'Benn mbir bu sell ci jëfë jigéen yi.',
       subtitle: "SaxalWér dëkk ci benn xam-xam bu sell, ci santé publique, économie de la santé, normes sociales, études de genre, xibaar comportementales ak santé numérique. Ñu def lu ñu xam mu am njëg — ñu seet lu ñu def.",
+    },
+    approach: {
+      label: 'Démarche',
+      title: 'SaxalWér est fondé sur une démarche rigoureuse de recherche-action, combinant science sociale et technologie.',
+      items: [
+        {
+          num: '01',
+          title: 'Recherche de terrain',
+          text: "Des entretiens qualitatifs menés avec des femmes et filles de différentes régions du Sénégal ont permis d'identifier les besoins réels, les barrières d'accès et les tabous qui structurent les pratiques de santé.",
+        },
+        {
+          num: '02',
+          title: 'Cadre décolonial',
+          text: "Notre approche refuse d'imposer des modèles de santé numérique développés pour d'autres contextes. Nous travaillons à partir des savoirs locaux, des langues vernaculaires et des systèmes de représentation propres au contexte sénégalais.",
+        },
+        {
+          num: '03',
+          title: 'Innovation responsable',
+          text: "La technologie est au service des femmes, pas l'inverse. Chaque fonctionnalité est évaluée à l'aune de son utilité réelle pour les utilisatrices et de son respect de leur dignité et de leur autonomie.",
+        },
+      ],
     },
     why: {
       label: 'Mbir bi',
@@ -203,7 +246,7 @@ const content = {
    ═══════════════════════════════════════════ */
 export default function ResearchContent() {
   const language = useLanguage()
-  const t = content[language]
+  const t = content[language as keyof typeof content] as typeof content.fr
 
   return (
     <main className="flex-1 bg-[#F5F1E6]">
@@ -220,6 +263,26 @@ export default function ResearchContent() {
           <div className="w-10 h-px bg-[#A65D40] mt-8" />
         </div>
       </section>
+
+      {t.approach && (
+        <section className="py-16 md:py-20 px-6 bg-[#EDE8D5]">
+          <div className="max-w-3xl mx-auto">
+            <span className="text-label block mb-5 text-[#A65D40]/70">{t.approach.label}</span>
+            <h2 className="title-h2 mb-5">{t.approach.title}</h2>
+            <div className="grid gap-6 md:grid-cols-3">
+              {t.approach.items.map((item, i) => (
+                <div key={i} className="card-value !py-6 !px-5 bg-white/90 border border-[#1A3C34]/10 rounded-[28px] shadow-sm">
+                  <span className="block text-[#A65D40]/40 mb-4 font-medium" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(1.3rem, 2vw, 1.5rem)' }}>
+                    {item.num}
+                  </span>
+                  <h3 className="text-[#1A3C34] font-semibold mb-3" style={{ fontSize: 'clamp(1rem, 1.4vw, 1.1rem)' }}>{item.title}</h3>
+                  <p className="text-sm text-[#7D5A44]/85 leading-relaxed">{item.text}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* ══ POURQUOI ═════════════════════════════ */}
       <section className="py-16 md:py-20 px-6 bg-[#EDE8D5]">

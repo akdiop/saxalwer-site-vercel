@@ -55,8 +55,8 @@ Dans ton projet actuel, tu as `src/imports/image-0.png`.
 3. Ouvre le fichier `.env.local` et remplace les valeurs :
 
 ```
-VITE_SUPABASE_PROJECT_ID=abcdefgh
-VITE_SUPABASE_ANON_KEY=eyJhbGciOi...
+NEXT_PUBLIC_SUPABASE_PROJECT_ID=abcdefgh
+NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGciOi...
 ```
 
 ⚠️ Ce fichier ne sera jamais mis en ligne (il est dans .gitignore).

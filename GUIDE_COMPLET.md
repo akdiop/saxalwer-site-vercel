@@ -83,12 +83,12 @@ Supabase est le service qui reçoit les inscriptions à la newsletter.
 8. Remplace les valeurs :
 
    AVANT :
-   VITE_SUPABASE_PROJECT_ID=ton-project-id-ici
-   VITE_SUPABASE_ANON_KEY=ta-anon-key-ici
+   NEXT_PUBLIC_SUPABASE_PROJECT_ID=ton-project-id-ici
+   NEXT_PUBLIC_SUPABASE_ANON_KEY=ta-anon-key-ici
 
    APRÈS (exemple) :
-   VITE_SUPABASE_PROJECT_ID=abcdefgh
-   VITE_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+   NEXT_PUBLIC_SUPABASE_PROJECT_ID=abcdefgh
+   NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
 
 9. Sauvegarde le fichier (Ctrl+S ou Cmd+S)
 
