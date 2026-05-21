@@ -1,7 +1,0 @@
-# Redirige toutes les URLs vers index.html pour React Router
-# Ce fichier est obligatoire sur OVH pour que la navigation fonctionne
-
-Options -MultiViews
-RewriteEngine On
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^ index.html [QSA,L]

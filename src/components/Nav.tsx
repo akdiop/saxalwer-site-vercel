@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { NavLink, useLocation } from 'react-router';
+import { useState, useEffect } from 'react';
+import { NavLink } from 'react-router';
 import { motion, AnimatePresence } from 'motion/react';
 import { Language, getTranslation } from '../i18n/translations';
 
@@ -10,65 +10,73 @@ interface NavProps {
 
 export function Nav({ language, onLanguageChange }: NavProps) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const t = getTranslation(language);
-  const location = useLocation();
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   const links = [
-    { to: '/',            label: t.nav.home },
-    { to: '/a-propos',   label: t.nav.about },
+    { to: '/',                label: t.nav.home },
+    { to: '/a-propos',        label: t.nav.about },
     { to: '/fonctionnalites', label: t.nav.features },
-    { to: '/recherche',  label: t.nav.research },
-    { to: '/tests',      label: t.nav.userTests },
-    { to: '/contact',    label: t.nav.contact },
+    { to: '/recherche',       label: t.nav.research },
+    { to: '/tests',           label: t.nav.userTests },
+    { to: '/contact',         label: t.nav.contact },
   ];
 
-  // Ferme le menu mobile au changement de page
-  const handleLinkClick = () => setMenuOpen(false);
+  const close = () => setMenuOpen(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-[#F5F1E6]/90 backdrop-blur-sm border-b border-[#1A3C34]/8">
-      <div className="max-w-6xl mx-auto px-5 h-14 flex items-center justify-between">
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? 'bg-[#F5F1E6]/96 backdrop-blur-md shadow-[0_1px_0_rgba(26,60,52,0.08)]'
+          : 'bg-[#F5F1E6]/75 backdrop-blur-sm'
+      }`}
+    >
+      <div className="max-w-6xl mx-auto px-6 md:px-10 h-[4.5rem] flex items-center justify-between gap-8">
 
-        {/* Logo texte — lien vers accueil */}
         <NavLink
           to="/"
-          className="font-medium uppercase tracking-[0.14em] text-[#4A2F27] text-xs hover:text-[#A65D40] transition-colors duration-200"
-          onClick={handleLinkClick}
+          onClick={close}
+          className="font-medium uppercase tracking-[0.18em] text-[#4A2F27] text-[11px] shrink-0 hover:text-[#A65D40] transition-colors duration-200"
         >
           SaxalWér
         </NavLink>
 
-        {/* Navigation desktop */}
-        <nav className="hidden md:flex items-center gap-6" aria-label="Navigation principale">
+        <nav className="hidden md:flex items-center gap-8" aria-label="Navigation principale">
           {links.map(link => (
             <NavLink
               key={link.to}
               to={link.to}
               end={link.to === '/'}
+              onClick={close}
               className={({ isActive }) =>
-                `text-xs font-light tracking-wide transition-colors duration-200 pb-0.5 ${
+                `text-[11px] tracking-wide transition-colors duration-200 pb-px ${
                   isActive
-                    ? 'text-[#1A3C34] border-b border-[#A65D40]'
-                    : 'text-[#7D5A44]/80 hover:text-[#1A3C34] border-b border-transparent'
+                    ? 'text-[#1A3C34] font-medium border-b border-[#A65D40]'
+                    : 'text-[#7D5A44]/70 font-light hover:text-[#1A3C34] border-b border-transparent'
                 }`
               }
-              onClick={handleLinkClick}
             >
               {link.label}
             </NavLink>
           ))}
         </nav>
 
-        {/* Sélecteur de langue desktop */}
-        <div className="hidden md:flex items-center gap-2">
+        <div className="hidden md:flex items-center gap-1.5 shrink-0">
           {(['fr', 'wo'] as Language[]).map(lang => (
             <button
               key={lang}
               onClick={() => onLanguageChange(lang)}
-              className={`text-xs px-2.5 py-1 rounded-full transition-all duration-200 ${
+              className={`text-[11px] px-2.5 py-1 rounded-full transition-all duration-200 tracking-wider ${
                 language === lang
                   ? 'bg-[#1A3C34] text-white'
-                  : 'text-[#7D5A44]/70 hover:text-[#1A3C34]'
+                  : 'text-[#7D5A44]/60 hover:text-[#1A3C34]'
               }`}
             >
               {lang.toUpperCase()}
@@ -76,52 +84,49 @@ export function Nav({ language, onLanguageChange }: NavProps) {
           ))}
         </div>
 
-        {/* Bouton burger mobile */}
         <button
-          className="md:hidden flex flex-col gap-1.5 p-1.5"
+          className="md:hidden flex flex-col justify-center gap-[5px] p-2 -mr-1 shrink-0"
           onClick={() => setMenuOpen(v => !v)}
           aria-label={menuOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
           aria-expanded={menuOpen}
         >
-          <span className={`block w-5 h-px bg-[#4A2F27] transition-all duration-300 origin-center ${menuOpen ? 'rotate-45 translate-y-[7px]' : ''}`} />
-          <span className={`block w-5 h-px bg-[#4A2F27] transition-all duration-200 ${menuOpen ? 'opacity-0' : ''}`} />
-          <span className={`block w-5 h-px bg-[#4A2F27] transition-all duration-300 origin-center ${menuOpen ? '-rotate-45 -translate-y-[7px]' : ''}`} />
+          <span className={`block w-5 h-px bg-[#4A2F27] transition-all duration-300 origin-center ${menuOpen ? 'rotate-45 translate-y-[6px]' : ''}`} />
+          <span className={`block w-5 h-px bg-[#4A2F27] transition-all duration-200 ${menuOpen ? 'opacity-0 scale-x-0' : ''}`} />
+          <span className={`block w-5 h-px bg-[#4A2F27] transition-all duration-300 origin-center ${menuOpen ? '-rotate-45 -translate-y-[6px]' : ''}`} />
         </button>
       </div>
 
-      {/* Menu mobile */}
       <AnimatePresence>
         {menuOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.25 }}
+            transition={{ duration: 0.22 }}
             className="md:hidden overflow-hidden bg-[#F5F1E6] border-t border-[#1A3C34]/8"
           >
-            <nav className="flex flex-col px-5 py-4 gap-1" aria-label="Navigation mobile">
+            <nav className="flex flex-col px-6 py-2" aria-label="Navigation mobile">
               {links.map(link => (
                 <NavLink
                   key={link.to}
                   to={link.to}
                   end={link.to === '/'}
+                  onClick={close}
                   className={({ isActive }) =>
-                    `py-2.5 text-sm font-light border-b border-[#1A3C34]/5 last:border-0 transition-colors duration-200 ${
-                      isActive ? 'text-[#1A3C34] font-medium' : 'text-[#7D5A44]'
+                    `py-3.5 text-sm border-b border-[#1A3C34]/5 last:border-0 transition-colors duration-200 ${
+                      isActive ? 'text-[#1A3C34] font-medium' : 'text-[#7D5A44] font-light'
                     }`
                   }
-                  onClick={handleLinkClick}
                 >
                   {link.label}
                 </NavLink>
               ))}
-              {/* Langue mobile */}
-              <div className="flex items-center gap-3 pt-3 mt-1">
-                <span className="text-xs text-[#7D5A44]/60 uppercase tracking-widest">Langue</span>
+              <div className="flex items-center gap-3 py-4">
+                <span className="text-[10px] text-[#7D5A44]/50 uppercase tracking-widest">Langue</span>
                 {(['fr', 'wo'] as Language[]).map(lang => (
                   <button
                     key={lang}
-                    onClick={() => { onLanguageChange(lang); setMenuOpen(false); }}
+                    onClick={() => { onLanguageChange(lang); close(); }}
                     className={`text-xs px-3 py-1 rounded-full transition-all duration-200 ${
                       language === lang
                         ? 'bg-[#1A3C34] text-white'

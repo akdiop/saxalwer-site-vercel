@@ -7,26 +7,26 @@ interface PageLayoutProps {
   children: ReactNode;
 }
 
-/** Gabarit partagé par toutes les pages intérieures.
- *  Garde le fond beige, le padding nav, et l'animation d'entrée. */
 export function PageLayout({ title, subtitle, children }: PageLayoutProps) {
   return (
-    <main className="flex-1 bg-[#F5F1E6] pt-24 pb-24 px-6 md:px-10 relative overflow-hidden">
+    <main className="flex-1 bg-[#F5F1E6] relative overflow-hidden">
 
-      {/* Filigrane baobab discret */}
+      {/* Filigrane très discret */}
       <div
-        className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden opacity-[0.025]"
+        className="absolute inset-0 flex items-start justify-end pointer-events-none overflow-hidden"
+        style={{ opacity: 0.02 }}
         aria-hidden="true"
       >
         <img
           src="/assets/logo.png"
           alt=""
-          className="w-[100vw] h-[100vw] max-w-none object-contain"
+          className="w-[40vw] max-w-[320px] object-contain mt-10 mr-4"
         />
       </div>
 
-      <div className="max-w-3xl mx-auto relative z-10 px-2 md:px-0">
-        {/* En-tête de page */}
+      <div className="relative z-10 max-w-3xl mx-auto px-6 md:px-10 pt-32 md:pt-40 pb-24 md:pb-32">
+
+        {/* En-tête */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -34,22 +34,29 @@ export function PageLayout({ title, subtitle, children }: PageLayoutProps) {
           className="mb-16 md:mb-20"
         >
           <h1
-            className="text-3xl md:text-4xl lg:text-5xl text-[#1A3C34] leading-[1.2] mb-6"
-            style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 600 }}
+            className="text-[#1A3C34] leading-[1.2] mb-6"
+            style={{
+              fontFamily: "'Cormorant Garamond', serif",
+              fontWeight: 600,
+              fontSize: 'clamp(1.75rem, 4vw, 3rem)',
+            }}
           >
             {title}
           </h1>
           {subtitle && (
-            <p className="text-base md:text-lg text-[#7D5A44] font-light leading-relaxed max-w-2xl">
+            <p
+              className="text-[#7D5A44]/85 font-light leading-relaxed mb-7"
+              style={{ fontSize: 'clamp(0.95rem, 1.8vw, 1.0625rem)', maxWidth: '58ch' }}
+            >
               {subtitle}
             </p>
           )}
-          <div className="w-12 h-px bg-[#A65D40] mt-6" />
+          <div className="w-10 h-px bg-[#A65D40]" />
         </motion.div>
 
-        {/* Contenu de la page */}
+        {/* Contenu */}
         <motion.div
-          initial={{ opacity: 0, y: 16 }}
+          initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.15, ease: 'easeOut' }}
         >
