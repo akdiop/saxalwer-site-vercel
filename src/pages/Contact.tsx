@@ -108,7 +108,7 @@ export function Contact({ language }: ContactProps) {
       </div>
     </PageLayout>
   );
-}
+};
 
 export default Contact;
-}
+
