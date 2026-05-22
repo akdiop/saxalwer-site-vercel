@@ -8,6 +8,7 @@ import Image from 'next/image'
 import { useLanguage } from './SiteWrapper'
 import MedicalDisclaimer from './MedicalDisclaimer'
 import NewsletterForm from './NewsletterForm'
+import { MessageCircleOff, Languages, Search, EyeOff } from 'lucide-react'
 
 /* ─── Icônes SVG inline ─── */
 const IconInfo = () => (
@@ -49,7 +50,7 @@ const content = {
       subtitle: "Une application intelligente et culturellement sensible pour aider les filles et les femmes à comprendre, suivre et protéger leur santé sexuelle et reproductive.",
       cta1: 'Participer aux tests',
       cta2: "Découvrir l'application",
-      newsletterLabel: 'Être notifiée du lancement',
+      newsletterLabel: 'Être notifié(e) du lancement',
     },
     problem: {
       label: 'Le constat',
@@ -57,7 +58,7 @@ const content = {
       intro: "Au Sénégal, comme dans de nombreux pays d'Afrique subsaharienne, les questions liées à la santé sexuelle et reproductive sont entourées de silence. Elles n'osent pas être posées ou sont difficiles à exprimer avec les mots justes.",
       items: [
         { icon: MessageCircleOff, title: 'Le tabou social', text: "Parler de son cycle, d'une douleur intime ou d'une grossesse est souvent perçu comme inapproprié ou irrespectueux. Les femmes se retrouvent seules face à des questions vitales." },
-        { icon: ShieldAlert, title: 'Les barrières linguistiques', text: "La majorité des ressources de santé existantes sont en français. Pour des millions de femmes qui pensent en wolof, pulaar ou sérère, l'information est inaccessible." },
+        { icon: Languages, title: 'Les barrières linguistiques', text: "La majorité des ressources de santé existantes sont en français. Pour des millions de femmes qui pensent en wolof, pulaar ou sérère, l'information est inaccessible." },
         { icon: Search, title: "Le manque d'information fiable", text: "Entre les rumeurs, les croyances non vérifiées et les contenus étrangers inadaptés, il est difficile de trouver une information à la fois juste et culturellement compréhensible." },
         { icon: EyeOff, title: 'La peur du jugement', text: "Consulter une professionnelle de santé ou chercher de l'information en ligne peut être vécu comme une honte. Cette peur empêche des femmes d'accéder à des soins essentiels." },
       ],
@@ -128,10 +129,10 @@ const content = {
       title: 'Laaj yu nekk ci kaw, laaj yëp.',
       intro: "Ci Senegaal, laaj yu wax ak wér-kër ak njool dañu am taabël yu bare.",
       items: [
-        { icon: '🔇', title: 'Géewël bi', text: "Wax ci sa njool, benn daw ci ndeyjoor walla benn guné, mën a def honte. Jigéen yi dañu soxor ci laaj yu am solo." },
-        { icon: '🗣️', title: 'Yenniku làkk', text: "Xibaar yu wér-kër bu bari dañu leen def ci Faransee. Ngir jigéen yu xam-xam ci Wolof, Pulaar walla Sérère, xibaar bi dëkk soxor." },
-        { icon: '🔍', title: 'Xamel xibaar bu baax', text: "Ci diiwaan yi ak xibaar yu kanam, dafa metti a xamal benn xibaar bu sell te bu yem." },
-        { icon: '😶', title: 'Ragal mbokk', text: "Laaj ak doktor walla xaar ci internet mën a def honte. Ragal bi du jëfë jigéen yi jël sopoon bu am solo." },
+        { icon: MessageCircleOff, title: 'Géewël bi', text: "Wax ci sa njool, benn daw ci ndeyjoor walla benn guné, mën a def honte. Jigéen yi dañu soxor ci laaj yu am solo." },
+        { icon: Languages, title: 'Yenniku làkk', text: "Xibaar yu wér-kër bu bari dañu leen def ci Faransee. Ngir jigéen yu xam-xam ci Wolof, Pulaar walla Sérère, xibaar bi dëkk soxor." },
+        { icon: Search, title: 'Xamel xibaar bu baax', text: "Ci diiwaan yi ak xibaar yu kanam, dafa metti a xamal benn xibaar bu sell te bu yem." },
+        { icon: EyeOff, title: 'Ragal mbokk', text: "Laaj ak doktor walla xaar ci internet mën a def honte. Ragal bi du jëfë jigéen yi jël sopoon bu am solo." },
       ],
     },
     solution: {
@@ -267,17 +268,24 @@ export default function HomeContent() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {t.problem.items.map((item, i) => (
-              <div key={i} className="flex gap-4 p-6 bg-white/5 border border-white/8 rounded-2xl">
-                <span className="text-2xl shrink-0 mt-0.5" role="img" aria-hidden="true">{item.icon}</span>
-                <div>
-                  <h3 className="text-white/90 text-base font-medium mb-2" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(1rem, 1.8vw, 1.15rem)' }}>
-                    {item.title}
-                  </h3>
-                  <p className="text-white/55 font-light text-sm leading-relaxed">{item.text}</p>
-                </div>
-              </div>
-            ))}
+            {t.problem.items.map((item, i) => {
+  const Icon = item.icon
+
+  return (
+    <div key={i} className="flex gap-4 p-6 bg-white/5 border border-white/8 rounded-2xl">
+      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[#D4AF37]/25 bg-white/5 text-[#D4AF37]/80" aria-hidden="true">
+        <Icon className="h-5 w-5" strokeWidth={1.6} />
+      </span>
+
+      <div>
+        <h3 className="text-white/90 text-base font-medium mb-2" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(1rem, 1.8vw, 1.15rem)' }}>
+          {item.title}
+        </h3>
+        <p className="text-white/55 font-light text-sm leading-relaxed">{item.text}</p>
+      </div>
+    </div>
+  )
+})}
           </div>
         </div>
       </section>
