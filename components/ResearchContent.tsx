@@ -60,7 +60,7 @@ const content: Record<Language, ResearchContentItem> = {
         { title: 'Économie de la santé', text: "Évaluer les coûts, l'accessibilité et la soutenabilité." },
         { title: 'Normes sociales', text: "Analyser ce qui structure le silence et les pratiques." },
         { title: 'Études de genre', text: "Comprendre les inégalités d'accès et de prise en charge." },
-        { title: 'Données comportementales', text: "Observer comment les femmes utilisent les outils numériques." },
+        { title: 'Données comportementales', text: "Observer comment les femmes utilisent les outils numériques et comment ceux-ci influencent en retour leur comportement face au recours aux soins." },
         { title: 'Santé numérique', text: "Concevoir des solutions adaptées aux contextes à faibles ressources." },
       ],
     },
@@ -69,7 +69,7 @@ const content: Record<Language, ResearchContentItem> = {
       {
         num: '01',
         title: 'Comprendre les besoins silencieux.',
-        text: "La première étape consiste à écouter. Quels sont les besoins que les femmes ne formulent pas publiquement, faute d'espace pour le faire ? À travers des entretiens individuels, des groupes de discussion et une analyse des pratiques de santé, SaxalWér identifie ces besoins silencieux pour les transformer en réponses concrètes.",
+        text: "La première étape consiste à écouter. Quels sont les besoins que les femmes ne formulent pas publiquement, faute d'espace pour le faire ou par peur, honte, tabou ? À travers des entretiens individuels, des groupes de discussion et une analyse des pratiques de santé, SaxalWér identifie ces besoins silencieux pour les transformer en réponses concrètes.",
         method: 'Méthode : entretiens semi-directifs, focus groups, analyse thématique.',
       },
       {
@@ -119,8 +119,8 @@ const content: Record<Language, ResearchContentItem> = {
     },
 
     cta: {
-      title: 'Vous êtes chercheure, partenaire institutionnel ou souhaitez collaborer ?',
-      text: "Nous travaillons avec des chercheures, des structures de santé et des partenaires institutionnels engagés sur les questions de santé féminine.",
+      title: 'Vous êtes chercheur(e), partenaire institutionnel ou souhaitez collaborer ?',
+      text: "Nous travaillons avec des chercheur(e)s, des structures de santé et des partenaires institutionnels engagés sur les questions de santé féminine.",
       btn1: 'Nous contacter',
       btn2: 'Voir les partenaires',
     },
