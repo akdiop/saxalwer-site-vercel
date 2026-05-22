@@ -19,7 +19,7 @@ export default function TermsPage() {
           {
             title: "Objet du site",
             paragraphs: [
-              "SaxalWér est un projet de santé numérique destiné aux femmes et aux filles au Sénégal. Le site et la future application proposent :",
+              "SaxalWér est un projet de santé numérique à impact social destiné aux femmes et aux filles au Sénégal. Le site et la future application proposent :",
             ],
             list: [
               "Des informations éducatives sur la santé sexuelle et reproductive.",
@@ -38,7 +38,7 @@ export default function TermsPage() {
           {
             title: "Public visé",
             paragraphs: [
-              "Le site est accessible à toutes les femmes et les filles à partir de 14 ans. Pour les utilisatrices mineures, une autorisation parentale ou d'une tutrice est recommandée, en particulier pour la participation aux tests utilisatrices.",
+              "Le site est accessible à toutes les femmes et les filles à partir de 13 ans. Pour les utilisatrices mineures, une autorisation parentale ou d'une tutrice est recommandée, en particulier pour la participation aux tests utilisatrices.",
             ],
           },
           {
