@@ -15,7 +15,7 @@ const content = {
     hero: {
       label: 'Tests utilisatrices',
       title: 'Votre voix construit SaxalWér.',
-      subtitle: "SaxalWér est co-construite avec les femmes qu'elle est destinée à servir. Si vous souhaitez tester l'application ou participer à un focus group, votre contribution est précieuse — et entièrement volontaire.",
+      subtitle: "SaxalWér est co-construite avec les femmes et les jeunes filles qu'elle est destinée à servir. Si vous souhaitez tester l'application ou participer à un focus group, votre contribution est précieuse — et entièrement volontaire.",
     },
     why: {
       label: '01 — Pourquoi participer',
