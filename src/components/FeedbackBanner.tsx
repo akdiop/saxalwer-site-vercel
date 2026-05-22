@@ -6,7 +6,7 @@ interface FeedbackBannerProps {
   googleFormUrl?: string;
 }
 
-export function FeedbackBanner({ language, googleFormUrl = "https://forms.google.com" }: FeedbackBannerProps) {
+export function FeedbackBanner({ language, googleFormUrl = "https://forms.gle/guMVZXFnYLCPeAXC7" }: FeedbackBannerProps) {
   const t = getTranslation(language);
   const f = t.feedback;
 
