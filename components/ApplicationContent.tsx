@@ -80,7 +80,7 @@ const content = {
         {
           key: 'bibliotheque',
           title: 'Bibliothèque santé',
-          subtitle: 'Information fiable, dans votre langue.',
+          subtitle: 'Information fiable, dans votre langue et en ressource audio.',
           text: "Des fiches éducatives claires sur la santé menstruelle, la contraception, les IST, la grossesse, la ménopause et les violences basées sur le genre. Chaque contenu est validé par des professionnelles de santé, disponible en français et en wolof.",
           tags: ['Validé médicalement', 'Français & Wolof', 'Accessible hors connexion'],
         },
