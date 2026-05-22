@@ -10,7 +10,7 @@ import Image from 'next/image'
 import { useLanguage } from './SiteWrapper'
 import MedicalDisclaimer from './MedicalDisclaimer'
 import NewsletterForm from './NewsletterForm'
-import { MessageCircleOff, Languages, Search, EyeOff } from 'lucide-react'
+import { MessageCircleOff, Languages, Search, EyeOff, ShieldAlert } from 'lucide-react'
 
 /* ─── Icônes SVG inline ─── */
 const IconInfo = () => (
