@@ -123,7 +123,7 @@ const content = {
           key: 'audio',
           title: 'Ressources audio',
           subtitle: 'Pour celles qui préfèrent écouter.',
-          text: "Des contenus de santé sous format audio en wolof, pulaar et sérère. Pensées pour les femmes peu habituées à la lecture numérique ou qui préfèrent recevoir l'information à travers la voix, comme dans la tradition orale.",
+          text: "Des contenus de santé sous format audio en langues locales. Pensées pour les femmes peu habituées à la lecture numérique ou qui préfèrent recevoir l'information à travers la voix, comme dans la tradition orale.",
           tags: ['Wolof · Pulaar · Sérère', 'Oral & culturel', 'Accessible à toutes'],
         },
         {
