@@ -74,8 +74,8 @@ const content = {
       subtitle: "SaxalWér n'est pas encore disponible. Voici ce qu'elle proposera — des outils pensés pour les réalités des femmes au Sénégal, sans jugement, en toute confidentialité.",
     },
     modules: {
-      label: 'Les modules',
-      title: 'Ce que SaxalWér proposera.',
+      label: 'Les focntionnalités',
+      title: 'Ce que SaxalWér envisage de proposer.',
       items: [
         {
           key: 'bibliotheque',
