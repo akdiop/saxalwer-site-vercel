@@ -268,17 +268,24 @@ export default function HomeContent() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {t.problem.items.map((item, i) => (
-              <div key={i} className="flex gap-4 p-6 bg-white/5 border border-white/8 rounded-2xl">
-                <span className="text-2xl shrink-0 mt-0.5" role="img" aria-hidden="true">{item.icon}</span>
-                <div>
-                  <h3 className="text-white/90 text-base font-medium mb-2" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(1rem, 1.8vw, 1.15rem)' }}>
-                    {item.title}
-                  </h3>
-                  <p className="text-white/55 font-light text-sm leading-relaxed">{item.text}</p>
-                </div>
-              </div>
-            ))}
+            {t.problem.items.map((item, i) => {
+  const Icon = item.icon
+
+  return (
+    <div key={i} className="flex gap-4 p-6 bg-white/5 border border-white/8 rounded-2xl">
+      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[#D4AF37]/25 bg-white/5 text-[#D4AF37]/80" aria-hidden="true">
+        <Icon className="h-5 w-5" strokeWidth={1.6} />
+      </span>
+
+      <div>
+        <h3 className="text-white/90 text-base font-medium mb-2" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(1rem, 1.8vw, 1.15rem)' }}>
+          {item.title}
+        </h3>
+        <p className="text-white/55 font-light text-sm leading-relaxed">{item.text}</p>
+      </div>
+    </div>
+  )
+})}
           </div>
         </div>
       </section>
