@@ -4,5 +4,5 @@
 // Settings → API → Project URL et anon public key
 // ─────────────────────────────────────────────────────────────────────
 
-export const projectId = import.meta.env.VITE_SUPABASE_PROJECT_ID ?? '';
-export const publicAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY ?? '';
+export const projectId = process.env.NEXT_PUBLIC_SUPABASE_PROJECT_ID ?? "";
+export const publicAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ?? "";
