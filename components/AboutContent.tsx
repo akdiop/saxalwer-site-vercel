@@ -66,7 +66,7 @@ const content = {
     mission: {
       label: 'Notre mission',
       title: 'Un espace numérique qui vous appartient.',
-      text: "Offrir aux femmes et aux filles au Sénégal un espace numérique intime, culturellement ancré et technologiquement avancé pour comprendre, suivre et protéger leur santé sexuelle et reproductive — sans jugement, sans tabou, en toute confiance.",
+      text: "Offrir aux femmes et aux filles au Sénégal un espace numérique intime, culturellement ancré et technologiquement avancé pour comprendre, suivre et protéger leur santé — sans jugement, sans tabou, en toute confiance, de manière accessible.",
       detail: "SaxalWér ne pose pas de diagnostic. Elle éduque, oriente et accompagne. Elle est un complément à la consultation médicale, jamais un substitut.",
     },
     vision: {
@@ -112,7 +112,7 @@ const content = {
     hero: {
       label: 'Ci SaxalWér',
       title: 'Saxal. Siiw. Dëkk.',
-      subtitle: "SaxalWér mooy benn plateforme ci wér-kër jigéen, dëkk ci benn xel : jigéen yëp ci Senegaal am droit a jël xibaar bu sell, ci seen làkk, ci yëg seen intimité ak seen aaduna.",
+      subtitle: "SaxalWér mooy benn plateforme ci wér-kër jigéen, dëkk ci benn xel : jigéen yëp ci Senegaal am droit a jël xibaar bu sell, ci seen làkk, ci yëg seen wérgu yaram ak seen aaduna.",
     },
     name: {
       label: 'Tur bi',
