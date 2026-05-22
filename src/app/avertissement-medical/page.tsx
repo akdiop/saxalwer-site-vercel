@@ -24,7 +24,7 @@ export default function MedicalPage() {
             ],
             list: [
               "Fournir des informations éducatives validées par des professionnelles de santé.",
-              "Améliorer et faciliter l'accès et/ou le recours aux informations de soin et structures de santé en s'adaptant à chaque utilisatrice"
+              "Améliorer et faciliter l'accès et/ou le recours aux informations de soin et structures de santé en s'adaptant à chaque utilisatrice",
               "Aider à mieux comprendre son corps, son cycle et sa santé.",
               "Orienter vers les bonnes ressources et les bonnes structures de soins.",
               "Donner accès à de l'information dans des langues locales (français, wolof, puis pulaar et sérère).",
