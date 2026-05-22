@@ -10,7 +10,7 @@ import Image from 'next/image'
 import { useLanguage } from './SiteWrapper'
 import MedicalDisclaimer from './MedicalDisclaimer'
 import NewsletterForm from './NewsletterForm'
-import { MessageCircleOff, Languages, Search, EyeOff, ShieldAlert } from 'lucide-react'
+import { MessageCircleOff, Languages, Search, EyeOff, } from 'lucide-react'
 
 /* ─── Icônes SVG inline ─── */
 const IconInfo = () => (
@@ -60,7 +60,7 @@ const content = {
       intro: "Au Sénégal, comme dans de nombreux pays d'Afrique subsaharienne, les questions liées à la santé sexuelle et reproductive sont entourées de silence. Elles n'osent pas être posées ou sont difficiles à exprimer avec les mots justes.",
       items: [
         { icon: MessageCircleOff, title: 'Le tabou social', text: "Parler de son cycle, d'une douleur intime ou d'une grossesse est souvent perçu comme inapproprié ou irrespectueux. Les femmes se retrouvent seules face à des questions vitales." },
-        { icon: ShieldAlert, title: 'Les barrières linguistiques', text: "La majorité des ressources de santé existantes sont en français. Pour des millions de femmes qui pensent en wolof, pulaar ou sérère, l'information est inaccessible." },
+        { icon: Languages, title: 'Les barrières linguistiques', text: "La majorité des ressources de santé existantes sont en français. Pour des millions de femmes qui pensent en wolof, pulaar ou sérère, l'information est inaccessible." },
         { icon: Search, title: "Le manque d'information fiable", text: "Entre les rumeurs, les croyances non vérifiées et les contenus étrangers inadaptés, il est difficile de trouver une information à la fois juste et culturellement compréhensible." },
         { icon: EyeOff, title: 'La peur du jugement', text: "Consulter une professionnelle de santé ou chercher de l'information en ligne peut être vécu comme une honte. Cette peur empêche des femmes d'accéder à des soins essentiels." },
       ],
