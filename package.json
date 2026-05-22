@@ -13,9 +13,11 @@
     "framer-motion": "latest",
     "lucide-react": "latest",
     "motion": "latest",
-    "next": "latest",
+    "next": "^9.3.3",
     "react": "latest",
-    "react-dom": "latest"
+    "react-dom": "latest",
+    "react-router": "^7.15.1",
+    "react-router-dom": "^7.15.1"
   },
   "devDependencies": {
     "@types/node": "latest",
