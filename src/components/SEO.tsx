@@ -1,6 +1,6 @@
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 
-const siteTitle = "SaxalWér — Information fiable et adaptable en santé féminine pour toutes";
+const siteTitle = "SaxalWér — Information fiable et adaptable en santé féminine.";
 const metaDescription = "Plateforme numérique culturellement sensible qui améliore l'accès à l'information en santé sexuelle et reproductive pour les femmes et les filles au Sénégal.";
 const siteUrl = "https://www.saxalwer.com";
 const ogImage = `${siteUrl}/og-image.png`;
