@@ -129,10 +129,10 @@ const content = {
       title: 'Laaj yu nekk ci kaw, laaj yëp.',
       intro: "Ci Senegaal, laaj yu wax ak wér-kër ak njool dañu am taabël yu bare.",
       items: [
-        { icon: '🔇', title: 'Géewël bi', text: "Wax ci sa njool, benn daw ci ndeyjoor walla benn guné, mën a def honte. Jigéen yi dañu soxor ci laaj yu am solo." },
-        { icon: '🗣️', title: 'Yenniku làkk', text: "Xibaar yu wér-kër bu bari dañu leen def ci Faransee. Ngir jigéen yu xam-xam ci Wolof, Pulaar walla Sérère, xibaar bi dëkk soxor." },
-        { icon: '🔍', title: 'Xamel xibaar bu baax', text: "Ci diiwaan yi ak xibaar yu kanam, dafa metti a xamal benn xibaar bu sell te bu yem." },
-        { icon: '😶', title: 'Ragal mbokk', text: "Laaj ak doktor walla xaar ci internet mën a def honte. Ragal bi du jëfë jigéen yi jël sopoon bu am solo." },
+      { icon: MessageCircleOff, title: 'Géewël bi', text: "Wax ci sa njool, benn daw ci ndeyjoor walla benn guné, mën a def honte. Jigéen yi dañu soxor ci laaj yu am solo." },
+      { icon: Languages, title: 'Yenniku làkk', text: "Xibaar yu wér-kër bu bari dañu leen def ci Faransee. Ngir jigéen yu xam-xam ci Wolof, Pulaar walla Sérère, xibaar bi dëkk soxor." },
+      { icon: Search, title: 'Xamel xibaar bu baax', text: "Ci diiwaan yi ak xibaar yu kanam, dafa metti a xamal benn xibaar bu sell te bu yem." },
+      { icon: EyeOff, title: 'Ragal mbokk', text: "Laaj ak doktor walla xaar ci internet mën a def honte. Ragal bi du jëfë jigéen yi jël sopoon bu am solo." },
       ],
     },
     solution: {
