@@ -22,7 +22,7 @@ const inter = Inter({
 
 const SITE_URL = 'https://www.saxalwer.com'
 const SITE_NAME = 'SaxalWér'
-const SITE_DESCRIPTION = "SaxalWér est une application intelligente et culturellement sensible dédiée à l'information et à l'orientation en santé sexuelle et reproductive féminine au Sénégal et en Afrique de l'Ouest."
+const SITE_DESCRIPTION = "SaxalWér est une application intelligente et culturellement sensible dédiée à l'information et à l'orientation en santé sexuelle et reproductive féminine au Sénégal.."
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
