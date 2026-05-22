@@ -3,12 +3,14 @@
 // Contenu complet de la page d'accueil
 // Utilise useLanguage() pour s'adapter à fr/wo
 
+'use client'
+
 import Link from 'next/link'
 import Image from 'next/image'
 import { useLanguage } from './SiteWrapper'
 import MedicalDisclaimer from './MedicalDisclaimer'
 import NewsletterForm from './NewsletterForm'
-import { EyeOff, MessageCircleOff, Search, ShieldAlert } from 'lucide-react'
+import { MessageCircleOff, Languages, Search, EyeOff } from 'lucide-react'
 
 /* ─── Icônes SVG inline ─── */
 const IconInfo = () => (
