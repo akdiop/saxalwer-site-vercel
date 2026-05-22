@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { SEOProvider } from './components/SEO';
 import { Nav } from './components/Nav';
 import { Footer } from './components/Footer';
