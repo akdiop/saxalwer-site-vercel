@@ -14,16 +14,17 @@ export default function MedicalPage() {
       <LegalPage
         label="Avertissement médical"
         title="Avertissement médical"
-        intro="SaxalWér propose des informations éducatives et d'orientation. Elle ne pose aucun diagnostic et ne remplace en aucun cas une consultation avec une professionnelle de santé qualifiée. Cette page précise nos limites et les conduites à tenir en cas d'urgence."
+        intro="SaxalWér propose des informations éducatives et d'orientation. Elle ne pose aucun diagnostic et ne remplace en aucun cas une consultation avec un(e) professionnel(le) de santé qualifié(e). Cette page précise nos limites et les conduites à tenir en cas d'urgence."
         lastUpdated="Mai 2026"
         sections={[
           {
             title: 'Ce que SaxalWér est',
             paragraphs: [
-              "SaxalWér est une plateforme d'éducation et d'orientation en santé sexuelle et reproductive. Son rôle est de :",
+              "SaxalWér est une plateforme adaptative, culturellement sensible, d'éducation et d'orientation en santé sexuelle et reproductive. Son rôle est de :",
             ],
             list: [
               "Fournir des informations éducatives validées par des professionnelles de santé.",
+              "Améliorer et faciliter l'accès et/ou le recours aux informations de soin et structures de santé en s'adaptant à chaque utilisatrice"
               "Aider à mieux comprendre son corps, son cycle et sa santé.",
               "Orienter vers les bonnes ressources et les bonnes structures de soins.",
               "Donner accès à de l'information dans des langues locales (français, wolof, puis pulaar et sérère).",
