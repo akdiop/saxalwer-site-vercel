@@ -95,7 +95,64 @@ ul li .dot-gold + span {
   }
 }
 
-/* 7. Mobile : conserver une lecture naturelle, non justifiée, pour éviter les blancs. */
+/* 7. Page Recherche & impact : remplacer les petits points par des symboles lisibles. */
+section .grid.grid-cols-2.md\:grid-cols-3 .card-value {
+  align-items: center !important;
+  text-align: center !important;
+  gap: 0.7rem;
+}
+
+section .grid.grid-cols-2.md\:grid-cols-3 .card-value .dot-gold {
+  display: none !important;
+}
+
+section .grid.grid-cols-2.md\:grid-cols-3 .card-value::before {
+  width: 2.65rem;
+  height: 2.65rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.35rem;
+  border-radius: 9999px;
+  background: rgba(166, 93, 64, 0.08);
+  border: 1px solid rgba(166, 93, 64, 0.16);
+  color: var(--terracotta);
+  font-family: var(--font-inter);
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+section .grid.grid-cols-2.md\:grid-cols-3 .card-value:nth-child(1)::before {
+  content: "✚"; /* Santé publique */
+}
+
+section .grid.grid-cols-2.md\:grid-cols-3 .card-value:nth-child(2)::before {
+  content: "₣"; /* Économie de la santé */
+}
+
+section .grid.grid-cols-2.md\:grid-cols-3 .card-value:nth-child(3)::before {
+  content: "◎"; /* Normes sociales */
+}
+
+section .grid.grid-cols-2.md\:grid-cols-3 .card-value:nth-child(4)::before {
+  content: "♀"; /* Études de genre */
+}
+
+section .grid.grid-cols-2.md\:grid-cols-3 .card-value:nth-child(5)::before {
+  content: "↗"; /* Données comportementales */
+}
+
+section .grid.grid-cols-2.md\:grid-cols-3 .card-value:nth-child(6)::before {
+  content: "⌁"; /* Santé numérique */
+}
+
+section .grid.grid-cols-2.md\:grid-cols-3 .card-value h3,
+section .grid.grid-cols-2.md\:grid-cols-3 .card-value p {
+  text-align: center !important;
+}
+
+/* 8. Mobile : conserver une lecture naturelle, non justifiée, pour éviter les blancs. */
 @media (max-width: 767px) {
   main section p,
   .prose-saxal,
@@ -104,5 +161,10 @@ ul li .dot-gold + span {
   .card-value p {
     text-align: left !important;
     hyphens: none;
+  }
+
+  section .grid.grid-cols-2.md\:grid-cols-3 .card-value h3,
+  section .grid.grid-cols-2.md\:grid-cols-3 .card-value p {
+    text-align: center !important;
   }
 }
