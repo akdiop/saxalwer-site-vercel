@@ -22,7 +22,7 @@ const inter = Inter({
 
 const SITE_URL = 'https://www.saxalwer.com'
 const SITE_NAME = 'SaxalWér'
-const SITE_DESCRIPTION = "SaxalWér est une application intelligente et culturellement sensible dédiée à l'information et à l'orientation en santé sexuelle et reproductive féminine au Sénégal.."
+const SITE_DESCRIPTION = "SaxalWér est une application intelligente et culturellement sensible dédiée à l'information et à l'orientation en santé sexuelle et reproductive féminine au Sénégal."
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -98,10 +98,10 @@ export const metadata: Metadata = {
 }
 
 /* ── JSON-LD structuré ── */
-const jsonLd = {
+const organizationJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
-  name: 'SaxalWér',
+  name: SITE_NAME,
   url: SITE_URL,
   logo: `${SITE_URL}/assets/logo.png`,
   description: SITE_DESCRIPTION,
@@ -113,9 +113,25 @@ const jsonLd = {
   },
   areaServed: [
     { '@type': 'Country', name: 'Sénégal' },
-    { '@type': 'Place', name: 'Afrique de l\'Ouest' },
+    { '@type': 'Place', name: "Afrique de l'Ouest" },
   ],
   sameAs: [],
+}
+
+const websiteJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: SITE_NAME,
+  alternateName: ['SaxalWer', 'SAXALWER', 'saxalwer.com'],
+  url: SITE_URL,
+  description: SITE_DESCRIPTION,
+  inLanguage: 'fr-SN',
+  publisher: {
+    '@type': 'Organization',
+    name: SITE_NAME,
+    url: SITE_URL,
+    logo: `${SITE_URL}/assets/logo.png`,
+  },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -134,7 +150,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* JSON-LD pour Google */}
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+         dangerouslySetInnerHTML={{
+  __html: JSON.stringify([organizationJsonLd, websiteJsonLd]),
+}}
         />
       </head>
       <body className="flex flex-col min-h-screen bg-[#F5F1E6] text-[#7D5A44]">
