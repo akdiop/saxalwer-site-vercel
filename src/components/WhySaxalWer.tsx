@@ -1,4 +1,4 @@
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion'
 import { Language, getTranslation } from '../i18n/translations';
 
 interface WhySaxalWerProps { language: Language; }
