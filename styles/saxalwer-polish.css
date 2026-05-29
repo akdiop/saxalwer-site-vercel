@@ -14,21 +14,19 @@ main > section:first-of-type img[alt="SaxalWér"] {
   }
 }
 
-/* 2. Textes : justification propre sur desktop, sans casser les titres ni les CTA. */
-@media (min-width: 768px) {
-  main section p:not(.text-center),
-  .prose-saxal,
-  .text-secondary,
-  .card-feature p,
-  .card-value p,
-  .card p {
-    text-align: justify;
-    text-justify: inter-word;
-    hyphens: auto;
-  }
+/* 2. Textes : justification générale sans toucher aux titres ni aux CTA. */
+main section p:not(.text-center),
+.prose-saxal,
+.text-secondary,
+.card-feature p,
+.card-value p,
+.card p {
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
 }
 
-/* 3. Cartes : meilleure cohérence d’alignement entre point, titre et texte. */
+/* 3. Cartes : meilleure cohérence d’alignement entre visuel, titre et texte. */
 .card-feature,
 .card-value {
   align-items: flex-start !important;
@@ -64,7 +62,7 @@ main > section:first-of-type img[alt="SaxalWér"] {
   line-height: 1.7 !important;
 }
 
-/* 5. Domaines d’expertise : “Santé publique”, etc. alignés au point et en gras. */
+/* 5. Domaines d’expertise : “Santé publique”, etc. alignés au visuel et en gras. */
 .card-value h3 {
   font-size: clamp(1.03rem, 1.8vw, 1.2rem) !important;
   line-height: 1.25 !important;
@@ -93,12 +91,70 @@ section .grid.grid-cols-2.md\:grid-cols-3 .card-value::before {
   content: none !important;
 }
 
-section .grid.grid-cols-2.md\:grid-cols-3 .card-value h3,
-section .grid.grid-cols-2.md\:grid-cols-3 .card-value p {
+section .grid.grid-cols-2.md\:grid-cols-3 .card-value h3 {
   text-align: left !important;
 }
 
-/* 6. Accueil — piliers : remplacer les petits points par des pictogrammes sobres SaxalWér. */
+section .grid.grid-cols-2.md\:grid-cols-3 .card-value p {
+  text-align: justify !important;
+  text-justify: inter-word;
+}
+
+/* 6. Recherche & impact — remplacer les points des piliers par des pictogrammes sobres. */
+main > section:nth-of-type(3) .grid.grid-cols-2.md\:grid-cols-3 .card-value {
+  gap: 0.85rem;
+}
+
+main > section:nth-of-type(3) .grid.grid-cols-2.md\:grid-cols-3 .card-value .dot-gold {
+  display: none !important;
+}
+
+main > section:nth-of-type(3) .grid.grid-cols-2.md\:grid-cols-3 .card-value::before {
+  content: "" !important;
+  width: 2.65rem;
+  height: 2.65rem;
+  flex: 0 0 auto;
+  display: block !important;
+  border-radius: 9999px;
+  border: 1px solid rgba(166, 93, 64, 0.18);
+  background-color: rgba(166, 93, 64, 0.07);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 1.35rem 1.35rem;
+  box-shadow: 0 14px 28px rgba(74, 47, 39, 0.05);
+}
+
+main > section:nth-of-type(3) .grid.grid-cols-2.md\:grid-cols-3 .card-value:nth-child(1)::before {
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23A65D40%22%20stroke-width%3D%221.7%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M20.8%204.6c-1.8-1.8-4.7-1.7-6.4.2L12%207.3%209.6%204.8C7.9%202.9%205%202.8%203.2%204.6c-1.9%201.9-1.8%205%20.2%206.9L12%2020l8.6-8.5c2-1.9%202.1-5%20.2-6.9Z%22%2F%3E%3Cpath%20d%3D%22M7.5%2012h2l1-2%202%204%201-2h3%22%2F%3E%3C%2Fsvg%3E");
+}
+
+main > section:nth-of-type(3) .grid.grid-cols-2.md\:grid-cols-3 .card-value:nth-child(2)::before {
+  border-color: rgba(26, 60, 52, 0.18);
+  background-color: rgba(26, 60, 52, 0.06);
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%231A3C34%22%20stroke-width%3D%221.7%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M12%203v18%22%2F%3E%3Cpath%20d%3D%22M6%207h12%22%2F%3E%3Cpath%20d%3D%22M6%207l-3%206h6L6%207Z%22%2F%3E%3Cpath%20d%3D%22M18%207l-3%206h6l-3-6Z%22%2F%3E%3Cpath%20d%3D%22M9%2021h6%22%2F%3E%3C%2Fsvg%3E");
+}
+
+main > section:nth-of-type(3) .grid.grid-cols-2.md\:grid-cols-3 .card-value:nth-child(3)::before {
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23A65D40%22%20stroke-width%3D%221.7%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Ccircle%20cx%3D%229%22%20cy%3D%228%22%20r%3D%223%22%2F%3E%3Ccircle%20cx%3D%2217%22%20cy%3D%229%22%20r%3D%222.5%22%2F%3E%3Cpath%20d%3D%22M3.5%2020a5.5%205.5%200%200%201%2011%200%22%2F%3E%3Cpath%20d%3D%22M14%2019a4.5%204.5%200%200%201%206.5%200%22%2F%3E%3C%2Fsvg%3E");
+}
+
+main > section:nth-of-type(3) .grid.grid-cols-2.md\:grid-cols-3 .card-value:nth-child(4)::before {
+  border-color: rgba(26, 60, 52, 0.18);
+  background-color: rgba(26, 60, 52, 0.06);
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%231A3C34%22%20stroke-width%3D%221.7%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Ccircle%20cx%3D%2212%22%20cy%3D%228%22%20r%3D%224%22%2F%3E%3Cpath%20d%3D%22M12%2012v8%22%2F%3E%3Cpath%20d%3D%22M8.5%2016h7%22%2F%3E%3Cpath%20d%3D%22M7%2020h10%22%2F%3E%3C%2Fsvg%3E");
+}
+
+main > section:nth-of-type(3) .grid.grid-cols-2.md\:grid-cols-3 .card-value:nth-child(5)::before {
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23A65D40%22%20stroke-width%3D%221.7%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M4%2019V5%22%2F%3E%3Cpath%20d%3D%22M4%2019h16%22%2F%3E%3Cpath%20d%3D%22M8%2016v-4%22%2F%3E%3Cpath%20d%3D%22M12%2016V8%22%2F%3E%3Cpath%20d%3D%22M16%2016v-6%22%2F%3E%3Ccircle%20cx%3D%228%22%20cy%3D%2212%22%20r%3D%221%22%2F%3E%3Ccircle%20cx%3D%2212%22%20cy%3D%228%22%20r%3D%221%22%2F%3E%3Ccircle%20cx%3D%2216%22%20cy%3D%2210%22%20r%3D%221%22%2F%3E%3C%2Fsvg%3E");
+}
+
+main > section:nth-of-type(3) .grid.grid-cols-2.md\:grid-cols-3 .card-value:nth-child(6)::before {
+  border-color: rgba(26, 60, 52, 0.18);
+  background-color: rgba(26, 60, 52, 0.06);
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%231A3C34%22%20stroke-width%3D%221.7%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Crect%20x%3D%227%22%20y%3D%222%22%20width%3D%2210%22%20height%3D%2220%22%20rx%3D%222%22%2F%3E%3Cpath%20d%3D%22M12%207v6%22%2F%3E%3Cpath%20d%3D%22M9%2010h6%22%2F%3E%3Cpath%20d%3D%22M11%2018h2%22%2F%3E%3C%2Fsvg%3E");
+}
+
+/* 7. Accueil — piliers : remplacer les petits points par des pictogrammes sobres SaxalWér. */
 main > section:nth-of-type(3) .card-feature {
   position: relative;
   gap: 0.85rem;
@@ -137,7 +193,7 @@ main > section:nth-of-type(3) .card-feature:nth-child(3)::before {
   background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23A65D40%22%20stroke-width%3D%221.7%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M20%206%209%2017l-5-5%22%2F%3E%3Cpath%20d%3D%22M21%2012a9%209%200%201%201-3-6.7%22%2F%3E%3C%2Fsvg%3E");
 }
 
-/* 7. Listes à puces : le texte démarre au même niveau visuel que les points. */
+/* 8. Listes à puces : le texte démarre au même niveau visuel que les points. */
 ul li.flex.items-start {
   align-items: flex-start !important;
 }
@@ -148,30 +204,21 @@ ul li .dot-gold {
 
 ul li .dot-gold + span {
   display: block;
-  text-align: left;
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
 }
 
-@media (min-width: 768px) {
-  ul li .dot-gold + span {
-    text-align: justify;
-    text-justify: inter-word;
-  }
-}
-
-/* 8. Mobile : conserver une lecture naturelle, non justifiée, pour éviter les blancs. */
 @media (max-width: 767px) {
   main section p,
   .prose-saxal,
   .text-secondary,
   .card-feature p,
   .card-value p,
-  .card p {
-    text-align: left !important;
-    hyphens: none;
-  }
-
-  section .grid.grid-cols-2.md\:grid-cols-3 .card-value h3,
-  section .grid.grid-cols-2.md\:grid-cols-3 .card-value p {
-    text-align: left !important;
+  .card p,
+  ul li .dot-gold + span {
+    text-align: justify !important;
+    text-justify: inter-word;
+    hyphens: auto;
   }
 }
