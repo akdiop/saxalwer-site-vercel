@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@vercel/speed-insights": "latest",
     "framer-motion": "latest",
     "lucide-react": "latest",
     "motion": "latest",
