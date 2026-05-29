@@ -2,6 +2,7 @@
 // Titre + sous-titre + trait terracotta + filigrane discret
 
 import { ReactNode } from 'react'
+import { motion } from 'framer-motion'
 import MedicalDisclaimer from './MedicalDisclaimer'
 
 interface Props {
