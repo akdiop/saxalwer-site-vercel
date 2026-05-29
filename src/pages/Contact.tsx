@@ -1,5 +1,5 @@
 import { useState, FormEvent } from 'react';
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import { PageLayout } from '../components/PageLayout';
 import { Language, getTranslation } from '../i18n/translations';
 
