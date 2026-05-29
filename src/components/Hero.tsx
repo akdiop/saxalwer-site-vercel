@@ -1,4 +1,4 @@
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion'
 import { Logo } from './Logo';
 import { NewsletterForm } from './NewsletterForm';
 import { WhySaxalWer } from './WhySaxalWer';
