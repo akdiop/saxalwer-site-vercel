@@ -1,0 +1,108 @@
+/* Ajustements visuels SaxalWér
+   Objectif : meilleure lisibilité, alignement des cartes et cohérence typographique.
+*/
+
+/* 1. Logo d’accueil : légèrement plus présent sans changer le fichier image. */
+main > section:first-of-type img[alt="SaxalWér"] {
+  transform: scale(1.18);
+  transform-origin: center;
+}
+
+@media (min-width: 768px) {
+  main > section:first-of-type img[alt="SaxalWér"] {
+    transform: scale(1.26);
+  }
+}
+
+/* 2. Textes : justification propre sur desktop, sans casser les titres ni les CTA. */
+@media (min-width: 768px) {
+  main section p:not(.text-center),
+  .prose-saxal,
+  .text-secondary,
+  .card-feature p,
+  .card-value p {
+    text-align: justify;
+    text-justify: inter-word;
+    hyphens: auto;
+  }
+}
+
+/* 3. Cartes : meilleure cohérence d’alignement entre point, titre et texte. */
+.card-feature,
+.card-value {
+  align-items: flex-start !important;
+  text-align: left !important;
+}
+
+.card-feature .dot-gold,
+.card-value .dot-gold {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  margin-top: 0.35rem;
+}
+
+.card-feature .title-h4,
+.card-value h3 {
+  text-align: left !important;
+  font-weight: 700 !important;
+}
+
+/* 4. Fonctionnalités : titres plus visibles, cohérents avec l’identité serif SaxalWér. */
+.card-feature.flex-row .title-h4,
+.card-feature .title-h4 {
+  font-size: clamp(1.12rem, 2vw, 1.35rem) !important;
+  line-height: 1.25 !important;
+  color: var(--deep-green);
+}
+
+.card-feature.flex-row .text-secondary,
+.card-feature .text-secondary {
+  font-size: clamp(0.9rem, 1.25vw, 0.98rem) !important;
+  line-height: 1.7 !important;
+}
+
+/* 5. Domaines d’expertise : aligner “Santé publique”, etc. avec le point et renforcer le titre. */
+.card-value h3 {
+  font-size: clamp(1.03rem, 1.8vw, 1.2rem) !important;
+  line-height: 1.25 !important;
+  color: var(--deep-green) !important;
+}
+
+.card-value p {
+  font-size: clamp(0.86rem, 1.15vw, 0.95rem) !important;
+  line-height: 1.65 !important;
+  color: rgba(125, 90, 68, 0.82) !important;
+}
+
+/* 6. Listes à puces : le texte démarre au même niveau visuel que les points. */
+ul li.flex.items-start {
+  align-items: flex-start !important;
+}
+
+ul li .dot-gold {
+  margin-top: 0.55rem !important;
+}
+
+ul li .dot-gold + span {
+  display: block;
+  text-align: left;
+}
+
+@media (min-width: 768px) {
+  ul li .dot-gold + span {
+    text-align: justify;
+    text-justify: inter-word;
+  }
+}
+
+/* 7. Mobile : conserver une lecture naturelle, non justifiée, pour éviter les blancs. */
+@media (max-width: 767px) {
+  main section p,
+  .prose-saxal,
+  .text-secondary,
+  .card-feature p,
+  .card-value p {
+    text-align: left !important;
+    hyphens: none;
+  }
+}
