@@ -20,7 +20,8 @@ main > section:first-of-type img[alt="SaxalWér"] {
   .prose-saxal,
   .text-secondary,
   .card-feature p,
-  .card-value p {
+  .card-value p,
+  .card p {
     text-align: justify;
     text-justify: inter-word;
     hyphens: auto;
@@ -47,31 +48,54 @@ main > section:first-of-type img[alt="SaxalWér"] {
   font-weight: 700 !important;
 }
 
-/* 4. Fonctionnalités : titres plus visibles, cohérents avec l’identité serif SaxalWér. */
+/* 4. Fonctionnalités : titres plus visibles, y compris dans la page Application. */
 .card-feature.flex-row .title-h4,
-.card-feature .title-h4 {
+.card-feature .title-h4,
+.card .title-h4 {
   font-size: clamp(1.12rem, 2vw, 1.35rem) !important;
   line-height: 1.25 !important;
   color: var(--deep-green);
 }
 
 .card-feature.flex-row .text-secondary,
-.card-feature .text-secondary {
+.card-feature .text-secondary,
+.card .text-secondary {
   font-size: clamp(0.9rem, 1.25vw, 0.98rem) !important;
   line-height: 1.7 !important;
 }
 
-/* 5. Domaines d’expertise : aligner “Santé publique”, etc. avec le point et renforcer le titre. */
+/* 5. Domaines d’expertise : “Santé publique”, etc. alignés au point et en gras. */
 .card-value h3 {
   font-size: clamp(1.03rem, 1.8vw, 1.2rem) !important;
   line-height: 1.25 !important;
   color: var(--deep-green) !important;
+  font-weight: 700 !important;
 }
 
 .card-value p {
   font-size: clamp(0.86rem, 1.15vw, 0.95rem) !important;
   line-height: 1.65 !important;
   color: rgba(125, 90, 68, 0.82) !important;
+}
+
+section .grid.grid-cols-2.md\:grid-cols-3 .card-value {
+  align-items: flex-start !important;
+  text-align: left !important;
+}
+
+section .grid.grid-cols-2.md\:grid-cols-3 .card-value .dot-gold {
+  display: inline-block !important;
+  margin-top: 0.2rem !important;
+  margin-bottom: 0.15rem !important;
+}
+
+section .grid.grid-cols-2.md\:grid-cols-3 .card-value::before {
+  content: none !important;
+}
+
+section .grid.grid-cols-2.md\:grid-cols-3 .card-value h3,
+section .grid.grid-cols-2.md\:grid-cols-3 .card-value p {
+  text-align: left !important;
 }
 
 /* 6. Listes à puces : le texte démarre au même niveau visuel que les points. */
@@ -95,76 +119,20 @@ ul li .dot-gold + span {
   }
 }
 
-/* 7. Page Recherche & impact : remplacer les petits points par des symboles lisibles. */
-section .grid.grid-cols-2.md\:grid-cols-3 .card-value {
-  align-items: center !important;
-  text-align: center !important;
-  gap: 0.7rem;
-}
-
-section .grid.grid-cols-2.md\:grid-cols-3 .card-value .dot-gold {
-  display: none !important;
-}
-
-section .grid.grid-cols-2.md\:grid-cols-3 .card-value::before {
-  width: 2.65rem;
-  height: 2.65rem;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 0.35rem;
-  border-radius: 9999px;
-  background: rgba(166, 93, 64, 0.08);
-  border: 1px solid rgba(166, 93, 64, 0.16);
-  color: var(--terracotta);
-  font-family: var(--font-inter);
-  font-size: 1.05rem;
-  font-weight: 600;
-  line-height: 1;
-}
-
-section .grid.grid-cols-2.md\:grid-cols-3 .card-value:nth-child(1)::before {
-  content: "✚"; /* Santé publique */
-}
-
-section .grid.grid-cols-2.md\:grid-cols-3 .card-value:nth-child(2)::before {
-  content: "₣"; /* Économie de la santé */
-}
-
-section .grid.grid-cols-2.md\:grid-cols-3 .card-value:nth-child(3)::before {
-  content: "◎"; /* Normes sociales */
-}
-
-section .grid.grid-cols-2.md\:grid-cols-3 .card-value:nth-child(4)::before {
-  content: "♀"; /* Études de genre */
-}
-
-section .grid.grid-cols-2.md\:grid-cols-3 .card-value:nth-child(5)::before {
-  content: "↗"; /* Données comportementales */
-}
-
-section .grid.grid-cols-2.md\:grid-cols-3 .card-value:nth-child(6)::before {
-  content: "⌁"; /* Santé numérique */
-}
-
-section .grid.grid-cols-2.md\:grid-cols-3 .card-value h3,
-section .grid.grid-cols-2.md\:grid-cols-3 .card-value p {
-  text-align: center !important;
-}
-
-/* 8. Mobile : conserver une lecture naturelle, non justifiée, pour éviter les blancs. */
+/* 7. Mobile : conserver une lecture naturelle, non justifiée, pour éviter les blancs. */
 @media (max-width: 767px) {
   main section p,
   .prose-saxal,
   .text-secondary,
   .card-feature p,
-  .card-value p {
+  .card-value p,
+  .card p {
     text-align: left !important;
     hyphens: none;
   }
 
   section .grid.grid-cols-2.md\:grid-cols-3 .card-value h3,
   section .grid.grid-cols-2.md\:grid-cols-3 .card-value p {
-    text-align: center !important;
+    text-align: left !important;
   }
 }
