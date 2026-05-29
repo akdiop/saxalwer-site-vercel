@@ -1,4 +1,4 @@
-je'use client'
+'use client';
 
 // Gabarit partagé pour les 4 pages légales
 // Affiche un disclaimer "ébauche juridique" en haut
