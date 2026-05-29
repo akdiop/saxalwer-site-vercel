@@ -34,7 +34,6 @@ export const metadata: Metadata = {
     template: '%s — SaxalWér',
   },
   description: SITE_DESCRIPTION,
-
   keywords: [
     'santé reproductive Sénégal',
     'santé intime femmes',
@@ -49,13 +48,11 @@ export const metadata: Metadata = {
     'plateforme santé femmes',
     'éducation santé Sénégal',
   ],
-
   authors: [{ name: 'SaxalWér', url: SITE_URL }],
   creator: 'SaxalWér',
   publisher: 'SaxalWér',
   applicationName: SITE_NAME,
   category: 'health',
-
   openGraph: {
     type: 'website',
     url: SITE_URL,
@@ -63,12 +60,11 @@ export const metadata: Metadata = {
     title: 'SaxalWér — Santé féminine au Sénégal, en confiance',
     description: SITE_DESCRIPTION,
     locale: 'fr_SN',
-    alternateLocale: ['fr_FR', 'wo_SN'],
+    alternateLocale: ['fr_FR'],
     images: [
       { url: '/og-image.png', width: 1080, height: 1080, alt: 'SaxalWér — Santé féminine' },
     ],
   },
-
   twitter: {
     card: 'summary_large_image',
     title: 'SaxalWér — Santé féminine au Sénégal',
@@ -77,7 +73,6 @@ export const metadata: Metadata = {
     creator: '@saxalwer',
     site: '@saxalwer',
   },
-
   robots: {
     index: true,
     follow: true,
@@ -88,19 +83,16 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-
   alternates: {
     canonical: SITE_URL,
-    languages: { 'fr-SN': SITE_URL, 'wo-SN': SITE_URL },
+    languages: { 'fr-SN': SITE_URL },
   },
-
   verification: {
     // À ajouter quand tu auras Google Search Console et Bing Webmaster
     // google: 'xxxxxxxxxxxxxxxxxxxx',
   },
 }
 
-/* ── JSON-LD structuré ── */
 const organizationJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
@@ -149,8 +141,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta name="geo.placename" content="Dakar, Sénégal" />
         <meta name="geo.position" content="14.6928;-17.4467" />
         <meta name="ICBM" content="14.6928, -17.4467" />
-
-        {/* JSON-LD pour Google */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -159,7 +149,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body className="flex flex-col min-h-screen bg-[#F5F1E6] text-[#7D5A44]">
-        {/* Skip to content — accessibilité clavier */}
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-[#1A3C34] focus:text-white focus:px-4 focus:py-2 focus:rounded-full focus:text-sm"
