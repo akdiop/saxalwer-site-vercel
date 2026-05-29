@@ -1,29 +1,30 @@
 'use client'
 
 // Layout global — enveloppe toutes les pages
-// Gère la langue et fournit Nav + Footer à tout le site
+// Le site reste temporairement en français jusqu'à relecture linguistique du wolof.
 
-import { useState, useEffect, ReactNode } from 'react'
+import { ReactNode, createContext, useContext, useEffect } from 'react'
 import Nav from './Nav'
 import Footer from './Footer'
 import { Language } from '@/lib/translations'
 
 interface Props { children: ReactNode }
 
+const ACTIVE_LANGUAGE: Language = 'fr'
+
 export default function SiteWrapper({ children }: Props) {
-  const [language, setLanguage] = useState<Language>('fr')
+  const language = ACTIVE_LANGUAGE
 
   useEffect(() => {
     if (typeof document !== 'undefined') {
-      document.documentElement.lang = language === 'wo' ? 'wo' : 'fr'
+      document.documentElement.lang = 'fr'
     }
-  }, [language])
+  }, [])
 
   return (
     <>
-      <Nav language={language} onLanguageChange={setLanguage} />
+      <Nav language={language} />
       <div className="flex-1 flex flex-col">
-        {/* Passe la langue aux enfants via un contexte simple */}
         <LanguageProvider language={language}>
           {children}
         </LanguageProvider>
@@ -34,8 +35,6 @@ export default function SiteWrapper({ children }: Props) {
 }
 
 // Contexte langue — permet aux pages enfants de lire la langue active
-import { createContext, useContext } from 'react'
-
 const LanguageContext = createContext<Language>('fr')
 
 export function LanguageProvider({ language, children }: { language: Language; children: ReactNode }) {
