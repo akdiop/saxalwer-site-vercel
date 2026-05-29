@@ -3,6 +3,7 @@
 
 import type { Metadata } from 'next'
 import { Cormorant_Garamond, Inter } from 'next/font/google'
+import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import '@/styles/globals.css'
 import '@/styles/saxalwer-polish.css'
@@ -166,6 +167,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           Aller au contenu principal
         </a>
         {children}
+        <Analytics />
         <SpeedInsights />
       </body>
     </html>
