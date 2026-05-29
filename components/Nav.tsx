@@ -7,25 +7,23 @@ import { Language } from '@/lib/translations'
 
 interface Props {
   language: Language
-  onLanguageChange: (lang: Language) => void
 }
 
 const navLinks = [
-  { href: '/',                     fr: 'Accueil',           wo: 'Kanam' },
-  { href: '/a-propos',             fr: 'À propos',          wo: 'Ci sunu bopp' },
-  { href: '/application',          fr: "L'application",     wo: 'Aplikasion bi' },
-  { href: '/ressources',           fr: 'Ressources',        wo: 'Xibaar' },
-  { href: '/recherche-impact',     fr: 'Recherche & impact',wo: 'Xam-xam' },
-  { href: '/participer-aux-tests', fr: 'Participer',        wo: 'Bokk' },
-  { href: '/partenaires',          fr: 'Partenaires',       wo: 'Partenaire' },
-  { href: '/contact',              fr: 'Contact',           wo: 'Jokkoo' },
+  { href: '/',                     fr: 'Accueil' },
+  { href: '/a-propos',             fr: 'À propos' },
+  { href: '/application',          fr: "L'application" },
+  { href: '/ressources',           fr: 'Ressources' },
+  { href: '/recherche-impact',     fr: 'Recherche & impact' },
+  { href: '/participer-aux-tests', fr: 'Participer' },
+  { href: '/partenaires',          fr: 'Partenaires' },
+  { href: '/contact',              fr: 'Contact' },
 ]
 
-export default function Nav({ language, onLanguageChange }: Props) {
+export default function Nav({ language }: Props) {
   const [menuOpen, setMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
-  const pathname = usePathname() ?? "/";
-  const isWo = language === 'wo'
+  const pathname = usePathname() ?? '/'
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20)
@@ -63,35 +61,16 @@ export default function Nav({ language, onLanguageChange }: Props) {
           </Link>
 
           {/* ── Nav desktop ── */}
-          <DesktopNav pathname={pathname} language={language} />
+          <DesktopNav pathname={pathname} />
 
-          {/* ── Droite desktop : langue + CTAs ── */}
+          {/* ── Droite desktop : CTAs ── */}
           <div className="hidden lg:flex items-center gap-3 shrink-0">
-            {/* Sélecteur de langue */}
-            <div className="flex items-center gap-1 mr-2">
-              {(['fr', 'wo'] as Language[]).map(lang => (
-                <button
-                  key={lang}
-                  onClick={() => onLanguageChange(lang)}
-                  className={`text-[11px] px-2.5 py-1 rounded-full transition-all duration-200 tracking-wider ${
-                    language === lang
-                      ? 'bg-[#1A3C34] text-white'
-                      : 'text-[#7D5A44]/60 hover:text-[#1A3C34]'
-                  }`}
-                >
-                  {lang.toUpperCase()}
-                </button>
-              ))}
-            </div>
-
-            {/* Bouton secondaire */}
             <Link href="/partenaires" className="btn-secondary !py-2 !px-5 !text-xs">
-              {isWo ? 'Partenaire' : 'Devenir partenaire'}
+              Devenir partenaire
             </Link>
 
-            {/* Bouton principal */}
             <Link href="/participer-aux-tests" className="btn-primary !py-2 !px-5 !text-xs">
-              {isWo ? 'Bokk ci testukaay' : 'Participer aux tests'}
+              Participer aux tests
             </Link>
           </div>
 
@@ -115,7 +94,6 @@ export default function Nav({ language, onLanguageChange }: Props) {
         open={menuOpen}
         pathname={pathname}
         language={language}
-        onLanguageChange={onLanguageChange}
         onClose={() => setMenuOpen(false)}
       />
     </>
@@ -125,7 +103,7 @@ export default function Nav({ language, onLanguageChange }: Props) {
 /* ────────────────────────────────────────────
    Navigation desktop
    ──────────────────────────────────────────── */
-function DesktopNav({ pathname, language }: { pathname: string; language: Language }) {
+function DesktopNav({ pathname }: { pathname: string }) {
   return (
     <nav className="hidden lg:flex items-center gap-6" aria-label="Navigation principale">
       {navLinks.map(link => {
@@ -142,7 +120,7 @@ function DesktopNav({ pathname, language }: { pathname: string; language: Langua
                 : 'text-[#7D5A44]/70 font-light hover:text-[#1A3C34] border-b border-transparent'
             }`}
           >
-            {language === 'wo' ? link.wo : link.fr}
+            {link.fr}
           </Link>
         )
       })}
@@ -154,16 +132,13 @@ function DesktopNav({ pathname, language }: { pathname: string; language: Langua
    Menu mobile
    ──────────────────────────────────────────── */
 function MobileMenu({
-  open, pathname, language, onLanguageChange, onClose
+  open, pathname, language, onClose
 }: {
   open: boolean
   pathname: string
   language: Language
-  onLanguageChange: (l: Language) => void
   onClose: () => void
 }) {
-  const isWo = language === 'wo'
-
   if (!open) return null
 
   return (
@@ -199,46 +174,28 @@ function MobileMenu({
                     : 'text-[#7D5A44] font-light'
                 }`}
               >
-                {language === 'wo' ? link.wo : link.fr}
+                {link.fr}
               </Link>
             )
           })}
         </nav>
 
         {/* CTAs mobile */}
-        <div className="px-6 pb-5 flex flex-col gap-3 border-t border-[#1A3C34]/5 pt-4">
+        <div className="px-6 pb-6 flex flex-col gap-3 border-t border-[#1A3C34]/5 pt-4">
           <Link
             href="/participer-aux-tests"
             onClick={onClose}
             className="btn-primary justify-center"
           >
-            {isWo ? 'Bokk ci testukaay' : 'Participer aux tests'}
+            Participer aux tests
           </Link>
           <Link
             href="/partenaires"
             onClick={onClose}
             className="btn-secondary justify-center"
           >
-            {isWo ? 'Partenaire' : 'Devenir partenaire'}
+            Devenir partenaire
           </Link>
-        </div>
-
-        {/* Langue mobile */}
-        <div className="px-6 pb-6 flex items-center gap-3">
-          <span className="text-label">Langue</span>
-          {(['fr', 'wo'] as Language[]).map(lang => (
-            <button
-              key={lang}
-              onClick={() => { onLanguageChange(lang); onClose() }}
-              className={`text-xs px-3 py-1 rounded-full transition-all duration-200 ${
-                language === lang
-                  ? 'bg-[#1A3C34] text-white'
-                  : 'text-[#7D5A44]/70 border border-[#1A3C34]/20'
-              }`}
-            >
-              {lang.toUpperCase()}
-            </button>
-          ))}
         </div>
       </div>
     </div>
