@@ -1,4 +1,4 @@
-'use client'
+je'use client'
 
 // Gabarit partagé pour les 4 pages légales
 // Affiche un disclaimer "ébauche juridique" en haut
@@ -49,8 +49,8 @@ export default function LegalPage({ label, title, intro, lastUpdated, sections, 
           <p className="text-sm text-[#1A3C34]/75 font-light leading-relaxed">
             <span className="font-medium">⚠ {isWo ? 'Yëgël ci doxal' : 'Avertissement'} — </span>
             {isWo
-              ? "Texte bii mooy benn base liggéey. Dafa jëfë benn jurist seetal ko ci publication officielle."
-              : "Ce texte est une base de travail. Il doit être relu par un juriste avant publication officielle."}
+              ? "Texte bii mooy benn base liggéey. Dafa jëfë benn jurist seetal ko ci."
+              : "Ce texte est une base de travail. Il doit être relu par un juriste et est donc sujet à modifications."}
           </p>
         </div>
 
