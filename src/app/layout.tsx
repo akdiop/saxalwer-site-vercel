@@ -4,6 +4,7 @@
 import type { Metadata } from 'next'
 import { Cormorant_Garamond, Inter } from 'next/font/google'
 import '@/styles/globals.css'
+import '@/styles/saxalwer-polish.css'
 
 const cormorant = Cormorant_Garamond({
   subsets: ['latin'],
@@ -150,9 +151,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* JSON-LD pour Google */}
         <script
           type="application/ld+json"
-         dangerouslySetInnerHTML={{
-  __html: JSON.stringify([organizationJsonLd, websiteJsonLd]),
-}}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify([organizationJsonLd, websiteJsonLd]),
+          }}
         />
       </head>
       <body className="flex flex-col min-h-screen bg-[#F5F1E6] text-[#7D5A44]">
